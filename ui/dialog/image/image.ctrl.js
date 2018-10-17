@@ -5,7 +5,7 @@ angular.module('kityminderEditor')
             list: [],
             url: image.url || '',
             title: image.title || '',
-            R_URL: /^https?\:\/\/\w+/
+            R_URL: /^(http|https|data)?\:\w+/
         };
 
         setTimeout(function() {
@@ -58,12 +58,12 @@ angular.module('kityminderEditor')
             }
             if (/^.*\.(jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG)$/.test(fileInput.val())) {
                 var file = fileInput[0].files[0];
-                return server.uploadImage(file).then(function (json) {
-                    var resp = json.data;
-                    if (resp.errno === 0) {
-                        $scope.data.url = resp.data.url;
-                    }
-                });
+                var reader=new FileReader();
+                reader.onload = function() {
+                    $scope.data.url = this.result;
+                    $scope.$apply();
+                };
+                reader.readAsDataURL(file);
             } else {
                 alert("后缀只能是 jpg、gif 及 png");
             }

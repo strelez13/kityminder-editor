@@ -1,0 +1,23 @@
+<div class="btn-group-vertical" dropdown is-open="isopen">
+    <button type="button"
+            class="btn btn-default export"
+            title="{{ 'export' | lang:'ui' }}"
+            ng-class="{'active': isopen}"
+            ng-click="exportPNG()"></button>
+    <button type="button"
+            class="btn btn-default export-caption dropdown-toggle"
+            title="{{ 'export' | lang:'ui' }}"
+            dropdown-toggle>
+        <span class="caption">{{ 'export' | lang:'ui' }}</span>
+        <span class="caret"></span>
+        <span class="sr-only">{{ 'export' | lang:'ui' }}</span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <a href ng-click="exportPNG()">{{ 'exportPNG' | lang:'ui/command' }}</a>
+        </li>
+        <li>
+            <a href ng-click="exportSVG()">{{ 'exportSVG' | lang:'ui/command' }}</a>
+        </li>
+    </ul>
+</div>

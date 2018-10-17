@@ -51,7 +51,7 @@
 }
 div.minder-editor-container {
   position: absolute;
-  top: 40px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -1340,6 +1340,42 @@ div a.theme-item {
   height: 20px;
 }
 .btn-group-vertical .search-caption .caption {
+  font-size: 12px;
+}
+.btn-group-vertical {
+  vertical-align: middle;
+  margin: 5px;
+}
+.btn-group-vertical .export,
+.btn-group-vertical .export-caption {
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  border: none!important;
+  border-radius: 0!important;
+}
+.btn-group-vertical .export:hover,
+.btn-group-vertical .export-caption:hover {
+  background-color: #eff3fa;
+}
+.btn-group-vertical .export:active,
+.btn-group-vertical .export-caption:active {
+  background-color: #c4d0ee;
+}
+.btn-group-vertical .export.active,
+.btn-group-vertical .export-caption.active {
+  box-shadow: none;
+  background-color: #eff3fa;
+}
+.btn-group-vertical .export {
+  height: 25px;
+  background: url(images/icons.png) no-repeat 0 -645px;
+  background-position-x: 50%;
+}
+.btn-group-vertical .export-caption {
+  height: 20px;
+}
+.btn-group-vertical .export-caption .caption {
   font-size: 12px;
 }
 .search-box {
