@@ -14,6 +14,12 @@ angular.module('kityminderEditor')
             $imageUrl[0].setSelectionRange(0, $scope.data.url.length);
         }, 300);
 
+        $modalInstance.rendered.then(function () {
+            $('#upload-image').change(function(){
+                $scope.uploadImage();
+            });
+        });
+
 
         // 搜索图片按钮点击事件
         $scope.searchImage = function() {
