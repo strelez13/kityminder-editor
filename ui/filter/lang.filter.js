@@ -1,19 +1,19 @@
 angular.module('kityminderEditor')
-	.filter('lang', ['config', 'lang.zh-cn', function(config, lang) {
-		return function(text, block) {
-			var defaultLang = config.get('defaultLang');
+    .filter('lang', ['config', '$injector',
+        function(config, $injector) {
+            return function(text, block) {
+                var defaultLang = config.get('defaultLang');
+                var dict = null;
+                try {
+                    dict = $injector.get('lang.' + defaultLang);
+                } catch(e) {
+                    dict = $injector.get('lang.en');
+                }
+                block.split('/').forEach(function(ele, idx) {
+                    dict = dict[ele];
+                });
 
-			if (lang[defaultLang] == undefined) {
-				return '未发现对应语言包，请检查 lang.xxx.service.js!';
-			} else {
+                return dict[text] || null;
 
-				var dict = lang[defaultLang];
-				block.split('/').forEach(function(ele, idx) {
-					dict = dict[ele];
-				});
-
-				return dict[text] || null;
-			}
-
-		};
-	}]);
+            };
+        }]);

@@ -114,5 +114,5 @@ Questions and suggestions feedback:
 [Github issues](https://github.com/fex-team/kityminder-editor/issues)
 
 Mail group: kity@baidu.com
-b
+
 QQ discussion group: 475962105
