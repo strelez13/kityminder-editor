@@ -2088,11 +2088,6 @@ angular.module('kityminderEditor').run(['$templateCache', function($templateCach
   );
 
 
-  $templateCache.put('ui/directive/exportFile/exportFile.html',
-    "<div class=\"btn-group-vertical\" dropdown is-open=\"isopen\"><button type=\"button\" class=\"btn btn-default export\" title=\"{{ 'export' | lang:'ui' }}\" ng-class=\"{'active': isopen}\" ng-click=\"exportPNG()\"></button> <button type=\"button\" class=\"btn btn-default export-caption dropdown-toggle\" title=\"{{ 'export' | lang:'ui' }}\" dropdown-toggle><span class=\"caption\">{{ 'export' | lang:'ui' }}</span> <span class=\"caret\"></span> <span class=\"sr-only\">{{ 'export' | lang:'ui' }}</span></button><ul class=\"dropdown-menu\" role=\"menu\"><li><a href ng-click=\"exportPNG()\">{{ 'exportPNG' | lang:'ui/command' }}</a></li><li><a href ng-click=\"exportSVG()\">{{ 'exportSVG' | lang:'ui/command' }}</a></li></ul></div>"
-  );
-
-
   $templateCache.put('ui/directive/fontOperator/fontOperator.html',
     "<div class=\"font-operator\"><div class=\"dropdown font-family-list\" dropdown><div class=\"dropdown-toggle current-font-item\" dropdown-toggle ng-disabled=\"minder.queryCommandState('fontfamily') === -1\"><a href class=\"current-font-family\" title=\"{{ 'fontfamily' | lang: 'ui' }}\">{{ getFontfamilyName(minder.queryCommandValue('fontfamily')) || '字体' }}</a> <span class=\"caret\"></span></div><ul class=\"dropdown-menu font-list\"><li ng-repeat=\"f in fontFamilyList\" class=\"font-item-wrap\"><a ng-click=\"minder.execCommand('fontfamily', f.val)\" class=\"font-item\" ng-class=\"{ 'font-item-selected' : f == minder.queryCommandValue('fontfamily') }\" ng-style=\"{'font-family': f.val }\">{{ f.name }}</a></li></ul></div><div class=\"dropdown font-size-list\" dropdown><div class=\"dropdown-toggle current-font-item\" dropdown-toggle ng-disabled=\"minder.queryCommandState('fontsize') === -1\"><a href class=\"current-font-size\" title=\"{{ 'fontsize' | lang: 'ui' }}\">{{ minder.queryCommandValue('fontsize') || '字号' }}</a> <span class=\"caret\"></span></div><ul class=\"dropdown-menu font-list\"><li ng-repeat=\"f in fontSizeList\" class=\"font-item-wrap\"><a ng-click=\"minder.execCommand('fontsize', f)\" class=\"font-item\" ng-class=\"{ 'font-item-selected' : f == minder.queryCommandValue('fontsize') }\" ng-style=\"{'font-size': f + 'px'}\">{{ f }}</a></li></ul></div><span class=\"s-btn-icon font-bold\" ng-click=\"minder.queryCommandState('bold') === -1 || minder.execCommand('bold')\" ng-class=\"{'font-bold-selected' : minder.queryCommandState('bold') == 1}\" ng-disabled=\"minder.queryCommandState('bold') === -1\"></span> <span class=\"s-btn-icon font-italics\" ng-click=\"minder.queryCommandState('italic') === -1 || minder.execCommand('italic')\" ng-class=\"{'font-italics-selected' : minder.queryCommandState('italic') == 1}\" ng-disabled=\"minder.queryCommandState('italic') === -1\"></span><div class=\"font-color-wrap\"><span class=\"quick-font-color\" ng-click=\"minder.queryCommandState('forecolor') === -1 || minder.execCommand('forecolor', foreColor)\" ng-disabled=\"minder.queryCommandState('forecolor') === -1\">A</span> <span color-picker class=\"font-color\" set-color=\"setDefaultColor()\" ng-disabled=\"minder.queryCommandState('forecolor') === -1\"><span class=\"caret\"></span></span> <span class=\"font-color-preview\" ng-style=\"{ 'background-color': foreColor }\" ng-click=\"minder.queryCommandState('forecolor') === -1 || minder.execCommand('forecolor', foreColor)\" ng-disabled=\"minder.queryCommandState('forecolor') === -1\"></span></div><color-panel minder=\"minder\" class=\"inline-directive\"></color-panel></div>"
   );
@@ -2204,7 +2199,7 @@ angular.module('kityminderEditor').run(['$templateCache', function($templateCach
 
 
   $templateCache.put('ui/directive/topTab/topTab.html',
-    "<uib-tabset><uib-tab heading=\"{{ 'file' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('file')\" select=\"setCurTab('file')\"><export-file minder=\"minder\"></export-file></uib-tab><uib-tab active=\"true\" heading=\"{{ 'idea' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('idea')\" select=\"setCurTab('idea')\"><undo-redo editor=\"editor\"></undo-redo><append-node minder=\"minder\"></append-node><arrange minder=\"minder\"></arrange><operation minder=\"minder\"></operation><hyper-link minder=\"minder\"></hyper-link><image-btn minder=\"minder\"></image-btn><note-btn minder=\"minder\"></note-btn><priority-editor minder=\"minder\"></priority-editor><progress-editor minder=\"minder\"></progress-editor><resource-editor minder=\"minder\"></resource-editor></uib-tab><uib-tab heading=\"{{ 'appearence' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('appearance')\" select=\"setCurTab('appearance')\"><template-list minder=\"minder\" class=\"inline-directive\"></template-list><theme-list minder=\"minder\"></theme-list><layout minder=\"minder\" class=\"inline-directive\"></layout><style-operator minder=\"minder\" class=\"inline-directive\"></style-operator><font-operator minder=\"minder\" class=\"inline-directive\"></font-operator></uib-tab><uib-tab heading=\"{{ 'view' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('view')\" select=\"setCurTab('view')\"><expand-level minder=\"minder\"></expand-level><select-all minder=\"minder\"></select-all><search-btn minder=\"minder\"></search-btn></uib-tab></uib-tabset>"
+    "<uib-tabset><uib-tab active=\"true\" heading=\"{{ 'idea' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('idea')\" select=\"setCurTab('idea')\"><undo-redo editor=\"editor\"></undo-redo><append-node minder=\"minder\"></append-node><arrange minder=\"minder\"></arrange><operation minder=\"minder\"></operation><hyper-link minder=\"minder\"></hyper-link><image-btn minder=\"minder\"></image-btn><note-btn minder=\"minder\"></note-btn><priority-editor minder=\"minder\"></priority-editor><progress-editor minder=\"minder\"></progress-editor><resource-editor minder=\"minder\"></resource-editor></uib-tab><uib-tab heading=\"{{ 'appearence' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('appearance')\" select=\"setCurTab('appearance')\"><template-list minder=\"minder\" class=\"inline-directive\"></template-list><theme-list minder=\"minder\"></theme-list><layout minder=\"minder\" class=\"inline-directive\"></layout><style-operator minder=\"minder\" class=\"inline-directive\"></style-operator><font-operator minder=\"minder\" class=\"inline-directive\"></font-operator></uib-tab><uib-tab heading=\"{{ 'view' | lang: 'ui/tabs'; }}\" ng-click=\"toggleTopTab('view')\" select=\"setCurTab('view')\"><expand-level minder=\"minder\"></expand-level><select-all minder=\"minder\"></select-all><search-btn minder=\"minder\"></search-btn></uib-tab></uib-tabset>"
   );
 
 
@@ -2256,7 +2251,7 @@ angular.module('kityminderEditor')
 			dividerWidth: 3,
 
 			// 默认语言
-			defaultLang: 'zh-cn',
+			defaultLang: 'zh_CN',
 
 			// 放大缩小比例
 			zoom: [10, 20, 30, 50, 80, 100, 120, 150, 200],
@@ -3161,7 +3156,7 @@ angular.module('kityminderEditor')
     });
 
 angular.module('kityminderEditor')
-    .service('lang.zh-cn', function() {
+    .service('lang.zh_CN', function() {
         return {
             'template': {
                 'default': '思维导图',
@@ -4012,7 +4007,7 @@ angular.module('kityminderEditor')
         };
     });
 angular.module('kityminderEditor')
-    .service('lang.zh-pny', function() {
+    .service('lang.zh_PNY', function() {
         return {
             'template': {
                 'default': 'Sīwéi dǎo tú',
@@ -5067,43 +5062,6 @@ angular.module('kityminderEditor')
             link: function($scope) {
 
                 $scope.levels = [1, 2, 3, 4, 5, 6];
-            }
-        }
-    });
-angular.module('kityminderEditor')
-    .directive('exportFile', function() {
-        return {
-            restrict: 'E',
-            templateUrl: 'ui/directive/exportFile/exportFile.html',
-            scope: {
-                minder: '='
-            },
-            replace: true,
-            link: function(scope) {
-                function download(url, filename) {
-                    var obj = document.createElement('a');
-                    obj.href = url;
-                    obj.download = filename;
-                    obj.dataset.downloadurl = url;
-                    document.body.appendChild(obj);
-                    obj.click();
-                    document.body.removeChild(obj)
-                }
-
-                scope.exportPNG = function () {
-                    minder.exportData('png').then(function (data) {
-                        download(data, 'export.png');
-                    });
-                };
-
-                scope.exportSVG = function () {
-                    minder.exportData('svg').then(function (data) {
-                        var url = 'data:image/svg+xml;base64,' + Base64.encode(data);
-                        download(url, 'export.svg');
-                    }, function (data){
-                        console.log('fail', data);
-                    });
-                };
             }
         }
     });

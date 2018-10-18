@@ -1,5 +1,5 @@
 angular.module('kityminderEditor')
-    .service('lang.zh-cn', function() {
+    .service('lang.zh_CN', function() {
         return {
             'template': {
                 'default': '思维导图',

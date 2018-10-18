@@ -1,5 +1,5 @@
 angular.module('kityminderEditor')
-    .service('lang.zh-pny', function() {
+    .service('lang.zh_PNY', function() {
         return {
             'template': {
                 'default': 'Sīwéi dǎo tú',

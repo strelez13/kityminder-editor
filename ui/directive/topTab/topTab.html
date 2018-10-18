@@ -1,7 +1,4 @@
 <uib-tabset>
-    <uib-tab heading="{{ 'file' | lang: 'ui/tabs'; }}" ng-click="toggleTopTab('file')" select="setCurTab('file')">
-        <export-file minder="minder"></export-file>
-    </uib-tab>
     <uib-tab active="true" heading="{{ 'idea' | lang: 'ui/tabs'; }}" ng-click="toggleTopTab('idea')" select="setCurTab('idea')">
         <undo-redo editor="editor"></undo-redo>
         <append-node minder="minder"></append-node>
