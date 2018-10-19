@@ -12,10 +12,10 @@ angular.module('kityminderEditor')
             'theme': {
                 'classic': 'The mind map classic',
                 'classic-compact': 'Compact classic',
-                'snow': 'gentle cold light',
+                'snow': 'Gentle cold light',
                 'snow-compact': 'Compact cold light',
                 'fish': 'Fish bone map',
-                'wire': 'wireframe',
+                'wire': 'Wireframe',
                 'fresh-red': 'Fresh red',
                 'fresh-soil': 'Dirty yellow',
                 'fresh-green': 'Artistic Green',
@@ -159,21 +159,23 @@ angular.module('kityminderEditor')
                 'command': {
                     'exportPNG': 'Export as PNG image',
                     'exportSVG': 'Export as SVG image',
-                    'appendsiblingnode': 'Insert Sibling',
-                    'appendparentnode': 'Insert Parent',
-                    'appendchildnode': 'Insert Child',
+                    
+                    'appendsiblingnode': 'Insert sibling node',
+                    'appendparentnode': 'Insert parent node below',
+                    'appendchildnode': 'Insert child node',
+                    
                     'removenode': 'Del',
                     'editnode': 'Edit',
                     'arrangeup': 'Up',
                     'arrangedown': 'Down',
                     'resetlayout': 'Organize layout',
                     'expandtoleaf': 'Expand all nodes',
-                    'expandtolevel1': 'Expand to level 1 node',
-                    'expandtolevel2': 'Expand to level 2 node',
-                    'expandtolevel3': 'Expand to level 3 node',
-                    'expandtolevel4': 'Expand to level 4 node',
-                    'expandtolevel5': 'Expand to level 5 node',
-                    'expandtolevel6': 'Expand to level 6 node',
+                    'expandtolevel1': 'Expand to level 1',
+                    'expandtolevel2': 'Expand to level 2',
+                    'expandtolevel3': 'Expand to level 3',
+                    'expandtolevel4': 'Expand to level 4',
+                    'expandtolevel5': 'Expand to level 5',
+                    'expandtolevel6': 'Expand to level 6',
                     'fullscreen': 'full screen',
                     'outline': 'outline'
                 },
@@ -191,7 +193,7 @@ angular.module('kityminderEditor')
 
                 'tabs': {
                     'file': 'File',
-                    'idea': 'Thinking',
+                    'idea': 'Format',
                     'appearence': 'Appearance',
                     'view': 'View'
                 },
@@ -368,8 +370,8 @@ angular.module('kityminderEditor')
 
                 'selectall': 'Select all',
                 'selectrevert': 'inverse selection',
-                'selectsiblings': 'Select brother nodes',
-                'selectlevel': 'Select a peer node',
+                'selectsiblings': 'Select sibling nodes',
+                'selectlevel': 'All nodes on the same level',
                 'selectpath': 'Select path',
                 'selecttree': 'Select subtree'
             },
