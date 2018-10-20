@@ -73,13 +73,12 @@ angular.module('kityminderEditor')
                     'outline': 'Gliederung'
                 },
                 'search':'suchen',
-                'export': 'exportieren',
                 'expandtoleaf': 'Erweitern',
                 'back': 'Zurück',
                 'undo': 'Rückgängig (Strg + Z)',
                 'redo': 'Wiederholen (Strg + Y)',
                 'tabs': {
-                    'idea': 'Format',
+                    'idea': 'Idee',
                     'appearence': 'Aussehen',
                     'view': 'Ansicht'
                 },

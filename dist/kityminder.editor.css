@@ -188,7 +188,7 @@ div.minder-editor-container {
   background-size: 25px;
 }
 .append-group {
-  width: 212px;
+  width: 260px;
 }
 .append-child-node .km-btn-icon {
   background-position: 0 0;
@@ -203,7 +203,7 @@ div.minder-editor-container {
   background-size: 25px;
 }
 .arrange-group {
-  width: 64px;
+  width: 80px;
 }
 .arrange-up .km-btn-icon {
   background-position: 0 -280px;
@@ -214,7 +214,7 @@ div.minder-editor-container {
   background-size: 25px;
 }
 .operation-group {
-  width: 64px;
+  width: 86px;
 }
 .edit-node .km-btn-icon {
   background-position: 0 -60px;
@@ -974,7 +974,7 @@ div a.theme-item {
   font-size: 12px;
 }
 .btn-wrap {
-  width: 50px;
+  width: 60px;
   height: 42px;
   cursor: pointer;
   display: inline-block;

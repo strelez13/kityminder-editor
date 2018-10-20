@@ -73,7 +73,6 @@ angular.module('kityminderEditor')
                     'outline': '大纲'
                 },
                 'search':'搜索',
-                'export': '导出',
                 'expandtoleaf': '展开',
                 'back': '返回',
                 'undo': '撤销 (Ctrl + Z)',

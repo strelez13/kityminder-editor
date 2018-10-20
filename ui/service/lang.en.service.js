@@ -55,13 +55,13 @@ angular.module('kityminderEditor')
             'ui': {
                 'command': {
                     'appendsiblingnode': 'Insert sibling node',
-                    'appendparentnode': 'Insert parent node below',
+                    'appendparentnode': 'Insert parent node',
                     'appendchildnode': 'Insert child node',
-                    'removenode': 'Del',
+                    'removenode': 'Delete',
                     'editnode': 'Edit',
                     'arrangeup': 'Up',
                     'arrangedown': 'Down',
-                    'resetlayout': 'Organize layout',
+                    'resetlayout': 'Reset layout',
                     'expandtoleaf': 'Expand all nodes',
                     'expandtolevel1': 'Expand to level 1',
                     'expandtolevel2': 'Expand to level 2',
@@ -72,14 +72,13 @@ angular.module('kityminderEditor')
                     'fullscreen': 'full screen',
                     'outline': 'outline'
                 },
-                'search': 'search',
-                'export': 'export',
-                'expandtoleaf': 'expand',
+                'search': 'Search',
+                'expandtoleaf': 'Expand',
                 'back': 'return',
                 'undo': 'Undo (Ctrl + Z)',
                 'redo': 'Redo (Ctrl + Y)',
                 'tabs': {
-                    'idea': 'Format',
+                    'idea': 'Idea',
                     'appearence': 'Appearance',
                     'view': 'View'
                 },
@@ -102,9 +101,9 @@ angular.module('kityminderEditor')
                 'collapsenode': 'receive a level one node',
                 'template': 'template',
                 'theme': 'skin',
-                'clearstyle': 'clear style',
-                'copystyle': 'copy style',
-                'pastestyle': 'paste style',
+                'clearstyle': 'Clear style',
+                'copystyle': 'Copy style',
+                'pastestyle': 'Paste style',
                 'appendsiblingnode': 'same theme',
                 'appendchildnode': 'subordinate theme',
                 'arrangeup': 'pre-tune',
@@ -122,41 +121,41 @@ angular.module('kityminderEditor')
                     'p7': 'Complete 3/4',
                     'p8': 'Complete 7/8',
                     'p9': 'Completed',
-                    'p0': 'clear progress'
+                    'p0': 'Clear progress'
                 },
-                'link': 'link',
-                'image': 'picture',
-                'note': 'Remarks',
-                'insertlink': 'insert link',
-                'insertimage': 'insert image',
-                'insertnote': 'insert note',
+                'link': 'Link',
+                'image': 'Image',
+                'note': 'Note',
+                'insertlink': 'Insert link',
+                'insertimage': 'Insert image',
+                'insertnote': 'Insert note',
                 'removelink': 'Remove existing links',
                 'removeimage': 'Remove existing image',
                 'removenote': 'Remove existing notes',
                 'resetlayout': 'Organize',
-                'navigator': 'navigator',
+                'navigator': 'Navigator',
                 'selectall': 'Select all',
-                'selectrevert': 'inverse selection',
-                'selectsiblings': 'Select sibling nodes',
-                'selectlevel': 'All nodes on the same level',
+                'selectrevert': 'Select revert',
+                'selectsiblings': 'Select siblings',
+                'selectlevel': 'Select level',
                 'selectpath': 'Select path',
                 'selecttree': 'Select subtree'
             },
             'popupcolor': {
-                'clearColor': 'clear color',
-                'standardColor': 'standard color',
+                'clearColor': 'Clear color',
+                'standardColor': 'Standard color',
                 'themeColor': 'Theme color'
             },
             'hyperlink': {
-                'hyperlink': 'link...',
+                'hyperlink': 'Link...',
                 'unhyperlink': 'Remove link'
             },
             'image': {
-                'image': 'image...',
+                'image': 'Image...',
                 'removeimage': 'Remove image'
             },
             'marker': {
-                'marker': 'progress/priority...'
+                'marker': 'Progress/Priority...'
             },
             'resource': {
                 'resource': 'Resources...'
