@@ -94,7 +94,6 @@ angular.module('kityminderEditor')
                 'zoom-in': 'Vergrößern (Strg +)',
                 'zoom-out': 'Verkleinern (Strg)',
                 'markers': 'Markierungen',
-                'resource': 'Ressourcen',
                 'help': 'Hilfe',
                 'preference': 'Einstellungen',
                 'expandnode': 'Auf das Blatt erweitern',
@@ -123,6 +122,9 @@ angular.module('kityminderEditor')
                     'p9': 'Abgeschlossen',
                     'p0': 'Klarer Fortschritt'
                 },
+                'resource': {
+                    'add': 'hinzufügen'
+                },
                 'link': 'Link',
                 'image': 'Bild',
                 'note': 'Notiz',
@@ -139,26 +141,26 @@ angular.module('kityminderEditor')
                 'selectsiblings': 'Geschwisterknoten auswählen',
                 'selectlevel': 'Alle Knoten derselben Eben',
                 'selectpath': 'Pfad auswählen',
-                'selecttree': 'Teilbaum auswählen'
-            },
-            'popupcolor': {
-                'clearColor': 'Leere Farbe',
-                'standardColor': 'Standardfarbe',
-                'themeColor': 'Themenfarbe'
-            },
-            'hyperlink': {
-                'hyperlink': 'Verbindung ...',
-                'unhyperlink': 'Link entfernen'
-            },
-            'image': {
-                'image': 'Bild ...',
-                'removeimage': 'Bild entfernen'
-            },
-            'marker': {
-                'marker': 'Fortschritt / Priorität ...'
-            },
-            'resource': {
-                'resource': 'Ressourcen ...'
+                'selecttree': 'Teilbaum auswählen',
+                'dialog': {
+                    'image': {
+                        'title': 'Image',
+                        'imagesearch': 'Image search',
+                        'keyword': 'Keyword：',
+                        'placeholder': 'Please input the keyword for search',
+                        'baidu': 'Search',
+                        'linkimage': 'Linked Image',
+                        'linkurl': 'URL：',
+                        'placeholder2': 'Must：start with http(s)://',
+                        'imagehint': 'Hint：',
+                        'placeholder3': 'Optional：The text that the mouse prompts when hovering over the image',
+                        'preview': 'Image preview：',
+                        'uploadimage': 'Upload Image',
+                        'selectfile': 'Select file...',
+                        'ok': 'OK',
+                        'cancel': 'Cancel'
+                    }
+                }
             }
         };
     });

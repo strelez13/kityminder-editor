@@ -10,7 +10,7 @@ angular.module('kityminderEditor')
                 'fish-bone': 'Fish bone figure'
             },
             'theme': {
-                'classic': 'The mind map classic',
+                'classic': 'Classic',
                 'classic-compact': 'Compact classic',
                 'snow': 'Gentle cold light',
                 'snow-compact': 'Compact cold light',
@@ -83,18 +83,17 @@ angular.module('kityminderEditor')
                     'view': 'View'
                 },
                 'bold': 'Bold',
-                'italic': 'italic',
-                'forecolor': 'font color',
-                'fontfamily': 'font',
-                'fontsize': 'font size',
-                'layoutstyle': 'theme',
-                'node': 'node operation',
+                'italic': 'Italic',
+                'forecolor': 'Font color',
+                'fontfamily': 'Font',
+                'fontsize': 'Size',
+                'layoutstyle': 'Theme',
+                'node': 'Node operation',
                 'hand': 'Allow dragging',
                 'camera': 'Locate the root node',
                 'zoom-in': 'Zoom in (Ctrl+)',
                 'zoom-out': 'Zoom out (Ctrl-)',
                 'markers': 'tag',
-                'resource': 'resource',
                 'help': 'Help',
                 'preference': 'Preferences',
                 'expandnode': 'Expand to leaf',
@@ -123,6 +122,9 @@ angular.module('kityminderEditor')
                     'p9': 'Completed',
                     'p0': 'Clear progress'
                 },
+                'resource': {
+                    'add': 'Add'
+                },
                 'link': 'Link',
                 'image': 'Image',
                 'note': 'Note',
@@ -139,26 +141,26 @@ angular.module('kityminderEditor')
                 'selectsiblings': 'Select siblings',
                 'selectlevel': 'Select level',
                 'selectpath': 'Select path',
-                'selecttree': 'Select subtree'
-            },
-            'popupcolor': {
-                'clearColor': 'Clear color',
-                'standardColor': 'Standard color',
-                'themeColor': 'Theme color'
-            },
-            'hyperlink': {
-                'hyperlink': 'Link...',
-                'unhyperlink': 'Remove link'
-            },
-            'image': {
-                'image': 'Image...',
-                'removeimage': 'Remove image'
-            },
-            'marker': {
-                'marker': 'Progress/Priority...'
-            },
-            'resource': {
-                'resource': 'Resources...'
+                'selecttree': 'Select subtree',
+                'dialog': {
+                    'image': {
+                        'title': 'Image',
+                        'imagesearch': 'Image search',
+                        'keyword': 'Keyword：',
+                        'placeholder': 'Please input the keyword for search',
+                        'baidu': 'Search',
+                        'linkimage': 'Linked Image',
+                        'linkurl': 'URL：',
+                        'placeholder2': 'Require：start with http(s)://',
+                        'imagehint': 'Hint：',
+                        'placeholder3': 'Optional：The text that the mouse prompts when hovering over the image',
+                        'preview': 'Image preview：',
+                        'uploadimage': 'Upload Image',
+                        'selectfile': 'Select file...',
+                        'ok': 'OK',
+                        'cancel': 'Cancel'
+                    }
+                }
             }
         };
     });

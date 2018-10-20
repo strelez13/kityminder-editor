@@ -94,7 +94,6 @@ angular.module('kityminderEditor')
                 'zoom-in': '放大（Ctrl+）',
                 'zoom-out': '缩小（Ctrl-）',
                 'markers': '标签',
-                'resource': '资源',
                 'help': '帮助',
                 'preference': '偏好设置',
                 'expandnode': '展开到叶子',
@@ -123,6 +122,9 @@ angular.module('kityminderEditor')
                     'p9': '已完成',
                     'p0': '清除进度'
                 },
+                'resource': {
+                    'add': '添加'
+                },
                 'link': '链接',
                 'image': '图片',
                 'note': '备注',
@@ -139,26 +141,26 @@ angular.module('kityminderEditor')
                 'selectsiblings': '选择兄弟节点',
                 'selectlevel': '选择同级节点',
                 'selectpath': '选择路径',
-                'selecttree': '选择子树'
-            },
-            'popupcolor': {
-                'clearColor': '清空颜色',
-                'standardColor': '标准颜色',
-                'themeColor': '主题颜色'
-            },
-            'hyperlink': {
-                'hyperlink': '链接...',
-                'unhyperlink': '移除链接'
-            },
-            'image': {
-                'image': '图片...',
-                'removeimage': '移除图片'
-            },
-            'marker': {
-                'marker': '进度/优先级...'
-            },
-            'resource': {
-                'resource': '资源...'
+                'selecttree': '选择子树',
+                'dialog': {
+                    'image': {
+                        'title': '图片',
+                        'imagesearch': '图片搜索',
+                        'keyword': '关键词：',
+                        'placeholder': '请输入搜索的关键词',
+                        'baidu': '百度一下',
+                        'linkimage': '外链图片',
+                        'linkurl': '链接地址：',
+                        'placeholder2': '必填：以 http(s):// 开头',
+                        'imagehint': '提示文本：',
+                        'placeholder3': '选填：鼠标在图片上悬停时提示的文本',
+                        'preview': '图片预览：',
+                        'uploadimage': '上传图片',
+                        'selectfile': '选择文件...',
+                        'ok': '确定',
+                        'cancel': '取消'
+                    }
+                }
             }
         };
     });
