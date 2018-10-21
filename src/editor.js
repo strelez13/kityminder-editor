@@ -9,9 +9,13 @@ define(function(require, exports, module) {
         runtimes.push(runtime);
     }
 
-    function KMEditor(selector) {
+    function KMEditor(selector, defaultLang) {
         this.selector = selector;
         this.lang = require('./lang');
+        if (defaultLang !== undefined) {
+            this.lang.setDefaultLang(defaultLang);
+        }
+
         for (var i = 0; i < runtimes.length; i++) {
             if (typeof runtimes[i] == 'function') {
                 runtimes[i].call(this, this);

@@ -47,9 +47,12 @@ _p[0] = {
         function assemble(runtime) {
             runtimes.push(runtime);
         }
-        function KMEditor(selector) {
+        function KMEditor(selector, defaultLang) {
             this.selector = selector;
             this.lang = _p.r(3);
+            if (defaultLang !== undefined) {
+                this.lang.setDefaultLang(defaultLang);
+            }
             for (var i = 0; i < runtimes.length; i++) {
                 if (typeof runtimes[i] == "function") {
                     runtimes[i].call(this, this);
@@ -105,7 +108,11 @@ _p[3] = {
             de: _p.r(25),
             zh_CN: _p.r(27)
         };
-        function lang(lang, text, block) {
+        var defaultLang = "en";
+        function lang(text, block, lang) {
+            if (lang === undefined) {
+                lang = defaultLang;
+            }
             var dict = langList[lang];
             if (dict === undefined) {
                 dict = langList["en"];
@@ -115,7 +122,16 @@ _p[3] = {
             });
             return dict[text] || null;
         }
-        return module.exports = lang;
+        return module.exports = {
+            setDefaultLang: function(lang) {
+                if (langList[lang] !== undefined) {
+                    defaultLang = lang;
+                    return true;
+                }
+                return false;
+            },
+            t: lang
+        };
     }
 };
 
@@ -2836,13 +2852,10 @@ angular.module('kityminderEditor')
 			dividerWidth: 3,
 
 			// 默认语言
-			defaultLang: 'zh_CN',
+			lang: 'zh_CN',
 
 			// 放大缩小比例
 			zoom: [10, 20, 30, 50, 80, 100, 120, 150, 200],
-
-            // 图片上传接口
-            imageUpload: 'server/imageUpload.php'
 		};
 
 		this.set = function(key, value) {
@@ -3103,32 +3116,6 @@ angular.module('kityminderEditor').service('revokeDialog', ['$uibModal', 'minder
 
     return {};
 }]);
-/**
- * @fileOverview
- *
- *  与后端交互的服务
- *
- * @author: zhangbobell
- * @email : zhangbobell@163.com
- *
- * @copyright: Baidu FEX, 2015
- */
-angular.module('kityminderEditor')
-    .service('server', ['config', '$http',  function(config, $http) {
-
-        return {
-            uploadImage: function(file) {
-                var url = config.get('imageUpload');
-                var fd = new FormData();
-                fd.append('upload_file', file);
-
-                return $http.post(url, fd, {
-                    transformRequest: angular.identity,
-                    headers: {'Content-Type': undefined}
-                });
-            }
-        }
-    }]);
 angular.module('kityminderEditor')
     .service('valueTransfer', function() {
         return {};
@@ -3149,8 +3136,8 @@ angular.module('kityminderEditor')
 angular.module('kityminderEditor')
     .filter('lang', ['config', function(config) {
         return function(text, block) {
-            var defaultLang = config.get('defaultLang');
-            return window.editor.lang(defaultLang, text, block);
+            var lang = config.get('lang');
+            return window.editor.lang.t(text, block, lang);
         };
     }]);
 angular.module('kityminderEditor')
@@ -3696,8 +3683,9 @@ angular.module('kityminderEditor')
 
 					define('demo', function(require) {
 						var Editor = require('editor');
+						var lang = config.get('lang');
 
-						var editor = window.editor = new Editor($minderEditor);
+						var editor = window.editor = new Editor($minderEditor, lang);
 
 						if (window.localStorage.__dev_minder_content) {
 							editor.minder.importJson(JSON.parse(window.localStorage.__dev_minder_content));
@@ -3722,7 +3710,8 @@ angular.module('kityminderEditor')
 					seajs.use('demo');
 
 				} else if (window.kityminder && window.kityminder.Editor) {
-					var editor = new kityminder.Editor($minderEditor);
+                    var lang = config.get('lang');
+					var editor = new kityminder.Editor($minderEditor, lang);
 
 					window.editor = scope.editor = editor;
 					window.minder = scope.minder = editor.minder;

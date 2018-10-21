@@ -4,7 +4,11 @@ define(function(require, exports, module) {
         'de': require('../l10n/de'),
         'zh_CN': require('../l10n/zh_CN')
     };
-    function lang(lang, text, block) {
+    var defaultLang = 'en';
+    function lang(text, block, lang) {
+        if (lang === undefined) {
+            lang = defaultLang;
+        }
         var dict = langList[lang];
         if (dict === undefined) {
             dict = langList['en'];
@@ -17,5 +21,14 @@ define(function(require, exports, module) {
 
     }
 
-    return module.exports = lang;
+    return module.exports = {
+        setDefaultLang : function(lang) {
+            if (langList[lang] !== undefined) {
+                defaultLang = lang;
+                return true;
+            }
+            return false;
+        },
+        t: lang
+    };
 });

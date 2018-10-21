@@ -57,7 +57,7 @@
 <script>
 	angular.module('kityminderDemo', ['kityminderEditor'])
 			.config(function (configProvider) {
-				configProvider.set('defaultLang', 'en');
+				configProvider.set('lang', 'en');
 			})
 			.controller('MainController', function($scope) {
 				$scope.initEditor = function(editor, minder) {

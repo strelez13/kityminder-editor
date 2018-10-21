@@ -76,7 +76,7 @@ follows:
 ```
 angular.module('kityminderDemo', ['kityminderEditor'])
     .config(function (configProvider) {
-        configProvider.set('imageUpload', 'path/to/image/upload/handler');
+        configProvider.set('lang', 'en');
     });
 
 ```

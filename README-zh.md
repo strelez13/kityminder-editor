@@ -51,7 +51,7 @@ KityMinder Editor 是一款强大、简洁、体验优秀的脑图编辑工具�
 ```
 angular.module('kityminderDemo', ['kityminderEditor'])
     .config(function (configProvider) {
-        configProvider.set('imageUpload', 'path/to/image/upload/handler');
+        configProvider.set('lang', 'zh_CN');
     });
 
 ```
