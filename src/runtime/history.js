@@ -120,7 +120,7 @@ define(function(require, exports, module) {
         });
         main.button({
             position: 'top',
-            label: lang('rndo', 'runtime/history'),
+            label: lang('redo', 'runtime/history'),
             key: 'Ctrl + Y',
             enable: hasRedo,
             action: redo,
