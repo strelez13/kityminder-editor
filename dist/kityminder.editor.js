@@ -120,7 +120,10 @@ _p[3] = {
             block.split("/").forEach(function(ele, idx) {
                 dict = dict[ele];
             });
-            return dict[text] || null;
+            if (dict === null) {
+                return text;
+            }
+            return dict[text] || text;
         }
         return module.exports = {
             setDefaultLang: function(lang) {
@@ -724,6 +727,7 @@ _p[10] = {
         function HistoryRuntime() {
             var minder = this.minder;
             var hotbox = this.hotbox;
+            var lang = this.lang.t;
             var MAX_HISTORY = 100;
             var lastSnap;
             var patchLock;
@@ -809,7 +813,7 @@ _p[10] = {
             var main = hotbox.state("main");
             main.button({
                 position: "top",
-                label: "撤销",
+                label: lang("undo", "runtime/history"),
                 key: "Ctrl + Z",
                 enable: hasUndo,
                 action: undo,
@@ -817,7 +821,7 @@ _p[10] = {
             });
             main.button({
                 position: "top",
-                label: "重做",
+                label: lang("rndo", "runtime/history"),
                 key: "Ctrl + Y",
                 enable: hasRedo,
                 action: redo,
@@ -902,6 +906,7 @@ _p[12] = {
             var receiver = this.receiver;
             var receiverElement = receiver.element;
             var isGecko = window.kity.Browser.gecko;
+            var lang = this.lang.t;
             // setup everything to go
             setupReciverElement();
             setupFsm();
@@ -959,7 +964,7 @@ _p[12] = {
             function setupHotbox() {
                 hotbox.state("main").button({
                     position: "center",
-                    label: "编辑",
+                    label: lang("edit", "runtime/input"),
                     key: "F2",
                     enable: function() {
                         return minder.queryCommandState("text") != -1;
@@ -1421,6 +1426,7 @@ _p[14] = {
     value: function(require, exports, module) {
         var Minder = _p.r(4);
         function MinderRuntime() {
+            var lang = this.lang.t;
             // 不使用 kityminder 的按键处理，由 ReceiverRuntime 统一处理
             var minder = new Minder({
                 enableKeyReceiver: false,
@@ -1430,7 +1436,7 @@ _p[14] = {
             minder.renderTo(this.selector);
             minder.setTheme(null);
             minder.select(minder.getRoot(), true);
-            minder.execCommand("text", "中心主题");
+            minder.execCommand("text", lang("maintopic", "runtime/minder"));
             // 导出给其它 Runtime 使用
             this.minder = minder;
         }
@@ -1446,8 +1452,9 @@ _p[15] = {
             var minder = this.minder;
             var hotbox = this.hotbox;
             var fsm = this.fsm;
+            var lang = this.lang.t;
             var main = hotbox.state("main");
-            var buttons = [ "前移:Alt+Up:ArrangeUp", "下级:Tab|Insert:AppendChildNode", "同级:Enter:AppendSiblingNode", "后移:Alt+Down:ArrangeDown", "删除:Delete|Backspace:RemoveNode", "上级:Shift+Tab|Shift+Insert:AppendParentNode" ];
+            var buttons = [ lang("arrangeup", "runtime/node") + ":Alt+Up:ArrangeUp", lang("appendchildnode", "runtime/node") + ":Tab|Insert:AppendChildNode", lang("appendsiblingnode", "runtime/node") + ":Enter:AppendSiblingNode", lang("arrangedown", "runtime/node") + ":Alt+Down:ArrangeDown", lang("removenode", "runtime/node") + ":Delete|Backspace:RemoveNode", lang("appendparentnode", "runtime/node") + ":Shift+Tab|Shift+Insert:AppendParentNode" ];
             var AppendLock = 0;
             buttons.forEach(function(button) {
                 var parts = button.split(":");
@@ -1461,7 +1468,7 @@ _p[15] = {
                     action: function() {
                         if (command.indexOf("Append") === 0) {
                             AppendLock++;
-                            minder.execCommand(command, "分支主题");
+                            minder.execCommand(command, lang("topic", "runtime/node"));
                             // provide in input runtime
                             function afterAppend() {
                                 if (!--AppendLock) {
@@ -1482,7 +1489,7 @@ _p[15] = {
             });
             main.button({
                 position: "bottom",
-                label: "导入节点",
+                label: lang("importnode", "runtime/node"),
                 key: "Alt + V",
                 enable: function() {
                     var selectedNodes = minder.getSelectedNodes();
@@ -1493,7 +1500,7 @@ _p[15] = {
             });
             main.button({
                 position: "bottom",
-                label: "导出节点",
+                label: lang("exportnode", "runtime/node"),
                 key: "Alt + C",
                 enable: function() {
                     var selectedNodes = minder.getSelectedNodes();
@@ -1519,10 +1526,11 @@ _p[16] = {
         function PriorityRuntime() {
             var minder = this.minder;
             var hotbox = this.hotbox;
+            var lang = this.lang.t;
             var main = hotbox.state("main");
             main.button({
                 position: "top",
-                label: "优先级",
+                label: lang("main", "runtime/priority"),
                 key: "P",
                 next: "priority",
                 enable: function() {
@@ -1542,7 +1550,7 @@ _p[16] = {
             });
             priority.button({
                 position: "center",
-                label: "移除",
+                label: lang("remove", "runtime/priority"),
                 key: "Del",
                 action: function() {
                     minder.execCommand("Priority", 0);
@@ -1550,7 +1558,7 @@ _p[16] = {
             });
             priority.button({
                 position: "top",
-                label: "返回",
+                label: lang("esc", "runtime/priority"),
                 key: "esc",
                 next: "back"
             });
@@ -1565,10 +1573,11 @@ _p[17] = {
         function ProgressRuntime() {
             var minder = this.minder;
             var hotbox = this.hotbox;
+            var lang = this.lang.t;
             var main = hotbox.state("main");
             main.button({
                 position: "top",
-                label: "进度",
+                label: lang("main", "runtime/progress"),
                 key: "G",
                 next: "progress",
                 enable: function() {
@@ -1588,7 +1597,7 @@ _p[17] = {
             });
             progress.button({
                 position: "center",
-                label: "移除",
+                label: lang("remove", "runtime/progress"),
                 key: "Del",
                 action: function() {
                     minder.execCommand("Progress", 0);
@@ -1596,7 +1605,7 @@ _p[17] = {
             });
             progress.button({
                 position: "top",
-                label: "返回",
+                label: lang("esc", "runtime/progress"),
                 key: "esc",
                 next: "back"
             });
@@ -2261,6 +2270,40 @@ _p[25] = {
                         cancel: "Cancel"
                     }
                 }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "Main Topic"
+                },
+                node: {
+                    arrangeup: "Arrange Up",
+                    appendchildnode: "Append Child Node",
+                    appendsiblingnode: "Append Sibling Node",
+                    arrangedown: "Arrange Down",
+                    removenode: "Delete",
+                    appendparentnode: "Append Parent Node",
+                    selectall: "Select All",
+                    topic: "Topic",
+                    importnode: "Import Node",
+                    exportnode: "Export Node"
+                },
+                input: {
+                    edit: "Edit"
+                },
+                priority: {
+                    main: "Priority",
+                    remove: "Delete",
+                    esc: "Esc"
+                },
+                progress: {
+                    main: "Progress",
+                    remove: "Delete",
+                    esc: "Esc"
+                },
+                history: {
+                    undo: "Undo",
+                    redo: "Redo"
+                }
             }
         };
     }
@@ -2450,6 +2493,40 @@ _p[26] = {
                         cancel: "Cancel"
                     }
                 }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "Main Topic"
+                },
+                node: {
+                    arrangeup: "Arrange Up",
+                    appendchildnode: "Append Child Node",
+                    appendsiblingnode: "Append Sibling Node",
+                    arrangedown: "Arrange Down",
+                    removenode: "Delete",
+                    appendparentnode: "Append Parent Node",
+                    selectall: "Select All",
+                    topic: "Topic",
+                    importnode: "Import Node",
+                    exportnode: "Export Node"
+                },
+                input: {
+                    edit: "Edit"
+                },
+                priority: {
+                    main: "Priority",
+                    remove: "Delete",
+                    esc: "Esc"
+                },
+                progress: {
+                    main: "Progress",
+                    remove: "Delete",
+                    esc: "Esc"
+                },
+                history: {
+                    undo: "Undo",
+                    redo: "Redo"
+                }
             }
         };
     }
@@ -2638,6 +2715,40 @@ _p[27] = {
                         ok: "确定",
                         cancel: "取消"
                     }
+                }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "中心主题"
+                },
+                node: {
+                    arrangeup: "前移",
+                    appendchildnode: "下级",
+                    appendsiblingnode: "同级",
+                    arrangedown: "后移",
+                    removenode: "删除",
+                    appendparentnode: "上级",
+                    selectall: "全选",
+                    topic: "分支主题",
+                    importnode: "导入节点",
+                    exportnode: "导出节点"
+                },
+                input: {
+                    edit: "编辑"
+                },
+                priority: {
+                    main: "优先级",
+                    remove: "移除",
+                    esc: "返回"
+                },
+                progress: {
+                    main: "进度",
+                    remove: "移除",
+                    esc: "返回"
+                },
+                history: {
+                    undo: "撤销",
+                    redo: "重做"
                 }
             }
         };

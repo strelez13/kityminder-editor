@@ -181,6 +181,40 @@ define(function(require, exports, module) {
                     'cancel': '取消'
                 }
             }
+        },
+        'runtime': {
+            'minder': {
+                'maintopic': '中心主题'
+            },
+            'node': {
+                'arrangeup': '前移',
+                'appendchildnode': '下级',
+                'appendsiblingnode': '同级',
+                'arrangedown': '后移',
+                'removenode': '删除',
+                'appendparentnode': '上级',
+                'selectall': '全选',
+                'topic': '分支主题',
+                'importnode': '导入节点',
+                'exportnode': '导出节点'
+            },
+            'input': {
+                'edit': '编辑'
+            },
+            'priority': {
+                'main': '优先级',
+                'remove': '移除',
+                'esc': '返回'
+            },
+            'progress': {
+                'main': '进度',
+                'remove': '移除',
+                'esc': '返回'
+            },
+            'history': {
+                'undo': '撤销',
+                'redo': '重做'
+            }
         }
     };
 });

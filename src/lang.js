@@ -17,7 +17,11 @@ define(function(require, exports, module) {
             dict = dict[ele];
         });
 
-        return dict[text] || null;
+        if (dict === null) {
+            return text;
+        }
+
+        return dict[text] || text;
 
     }
 

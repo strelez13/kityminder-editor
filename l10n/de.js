@@ -181,6 +181,40 @@ define(function(require, exports, module) {
                     'cancel': 'Cancel'
                 }
             }
+        },
+        'runtime': {
+            'minder': {
+                'maintopic': 'Main Topic'
+            },
+            'node': {
+                'arrangeup': 'Arrange Up',
+                'appendchildnode': 'Append Child Node',
+                'appendsiblingnode': 'Append Sibling Node',
+                'arrangedown': 'Arrange Down',
+                'removenode': 'Delete',
+                'appendparentnode': 'Append Parent Node',
+                'selectall': 'Select All',
+                'topic': 'Topic',
+                'importnode': 'Import Node',
+                'exportnode': 'Export Node'
+            },
+            'input': {
+                'edit': 'Edit'
+            },
+            'priority': {
+                'main': 'Priority',
+                'remove': 'Delete',
+                'esc': 'Esc'
+            },
+            'progress': {
+                'main': 'Progress',
+                'remove': 'Delete',
+                'esc': 'Esc'
+            },
+            'history': {
+                'undo': 'Undo',
+                'redo': 'Redo'
+            }
         }
     };
 });
