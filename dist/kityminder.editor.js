@@ -49,6 +49,7 @@ _p[0] = {
         }
         function KMEditor(selector) {
             this.selector = selector;
+            this.lang = _p.r(3);
             for (var i = 0; i < runtimes.length; i++) {
                 if (typeof runtimes[i] == "function") {
                     runtimes[i].call(this, this);
@@ -98,7 +99,24 @@ _p[2] = {
 
 //src/lang.js
 _p[3] = {
-    value: function(require, exports, module) {}
+    value: function(require, exports, module) {
+        var langList = {
+            en: _p.r(26),
+            de: _p.r(25),
+            zh_CN: _p.r(27)
+        };
+        function lang(lang, text, block) {
+            var dict = langList[lang];
+            if (dict === undefined) {
+                dict = langList["en"];
+            }
+            block.split("/").forEach(function(ele, idx) {
+                dict = dict[ele];
+            });
+            return dict[text] || null;
+        }
+        return module.exports = lang;
+    }
 };
 
 //src/minder.js
@@ -2043,6 +2061,573 @@ _p[24] = {
     }
 };
 
+//l10n/de.js
+_p[25] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "Mind Map",
+                tianpan: "Tianpan Karte",
+                structure: "Organigramm",
+                filetree: "Verzeichnis-Organigramm",
+                right: "Logisches Strukturdiagramm",
+                "fish-bone": "Fischknochenfigur"
+            },
+            theme: {
+                classic: "Classic",
+                "classic-compact": "Classic Kompakt",
+                snow: "sanfte Licht",
+                "snow-compact": "Kompakt kalt",
+                fish: "Fischknochen",
+                wire: "Drahtgitter",
+                "fresh-red": "Frisches Rot",
+                "fresh-soil": "Boden gelb",
+                "fresh-green": "Literarisches Grün",
+                "fresh-blue": "Himmelblau",
+                "fresh-purple": "Romantisches Lila",
+                "fresh-pink": "Gehirnpulver",
+                "fresh-red-compat": "Kompakt rot",
+                "fresh-soil-compat": "Kompakt gelb",
+                "fresh-green-compat": "Kompaktgrün",
+                "fresh-blue-compat": "Kompakt blau",
+                "fresh-purple-compat": "Kompaktes Lila",
+                "fresh-pink-compat": "Kompaktes Pulver",
+                tianpan: "Zifferblatt",
+                "tianpan-compact": "Kompakter Tag"
+            },
+            maintopic: "Zentrierthema",
+            topic: "Branchenthema",
+            panels: {
+                history: "Verlauf",
+                template: "Vorlage",
+                theme: "Haut",
+                layout: "Layout",
+                style: "Stil",
+                font: "Text",
+                color: "Farbe",
+                background: "Hintergrund",
+                insert: "Einfügen",
+                arrange: "Anpassung",
+                nodeop: "aktuell",
+                priority: "Priorität",
+                progress: "Fortschritt",
+                resource: "Ressourcen",
+                note: "Bemerkungen",
+                attachment: "Anlage",
+                word: "Text"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "Neuer Geschwisterknoten",
+                    appendparentnode: "Neuen Überknoten unterhalb",
+                    appendchildnode: "Neuer Unterknoten",
+                    removenode: "Löschen",
+                    editnode: "Bearbeiten",
+                    arrangeup: "Hoch",
+                    arrangedown: "Runter",
+                    resetlayout: "Layout organisieren",
+                    expandtoleaf: "Alle Knoten ausklappen",
+                    expandtolevel1: "Ausklappen bis auf Level 1 Knoten",
+                    expandtolevel2: "Ausklappen bis zu sekundären Knoten",
+                    expandtolevel3: "Ausklappen bis zu Knoten der dritten Ebene",
+                    expandtolevel4: "Ausklappen bis zu vierstufigen Knoten",
+                    expandtolevel5: "Ausklappen bis zu fünfstufigen Knoten",
+                    expandtolevel6: "Ausklappen bis zu sechsstufigen Knoten",
+                    fullscreen: "Vollbild",
+                    outline: "Gliederung"
+                },
+                search: "suchen",
+                expandtoleaf: "Erweitern",
+                back: "Zurück",
+                undo: "Rückgängig (Strg + Z)",
+                redo: "Wiederholen (Strg + Y)",
+                tabs: {
+                    idea: "Idee",
+                    appearence: "Aussehen",
+                    view: "Ansicht"
+                },
+                bold: "Fett",
+                italic: "Kursiv",
+                forecolor: "Schriftfarbe",
+                fontfamily: "Schriftart",
+                fontsize: "Schriftgröße",
+                layoutstyle: "Thema",
+                node: "Knotenoperation",
+                hand: "Ziehen erlauben",
+                camera: "Stammknoten zentrieren",
+                "zoom-in": "Vergrößern (Strg +)",
+                "zoom-out": "Verkleinern (Strg)",
+                markers: "Markierungen",
+                help: "Hilfe",
+                preference: "Einstellungen",
+                expandnode: "Auf das Blatt erweitern",
+                collapsenode: "einen Level-1-Knoten erhalten",
+                template: "Vorlage",
+                theme: "Haut",
+                clearstyle: "Stil entfernen",
+                copystyle: "Stil kopieren",
+                pastestyle: "Stil einfügen",
+                appendsiblingnode: "Gleiches Thema",
+                appendchildnode: "Untergeordnetes Thema",
+                arrangeup: "Voreinstellung",
+                arrangedown: "Nachstimmen",
+                editnode: "Bearbeiten",
+                removenode: "Entfernen",
+                priority: "Priorität",
+                progress: {
+                    p1: "Nicht begonnen",
+                    p2: "1/8 fertiggestellt",
+                    p3: "1/4 fertiggestellt",
+                    p4: "3/8 fertiggestellt",
+                    p5: "1/2 fertiggestellt",
+                    p6: "5/8 fertiggestellt",
+                    p7: "3/4 fertiggestellt",
+                    p8: "7/8 fertiggestellt",
+                    p9: "Abgeschlossen",
+                    p0: "Klarer Fortschritt"
+                },
+                resource: {
+                    add: "hinzufügen"
+                },
+                link: "Link",
+                image: "Bild",
+                note: "Notiz",
+                insertlink: "Link einfügen",
+                insertimage: "Bild einfügen",
+                insertnote: "Notiz einfügen",
+                removelink: "Bestehende Links entfernen",
+                removeimage: "Bestehendes Bild entfernen",
+                removenote: "Bestehende Notizen entfernen",
+                resetlayout: "Organisieren",
+                navigator: "Navigator",
+                selectall: "Alles auswählen",
+                selectrevert: "Auswahl umkehren",
+                selectsiblings: "Geschwisterknoten auswählen",
+                selectlevel: "Alle Knoten derselben Eben",
+                selectpath: "Pfad auswählen",
+                selecttree: "Teilbaum auswählen",
+                noteeditor: {
+                    title: "Note",
+                    hint: "Support GFM grammar",
+                    placeholder: "Please select a node to edit note"
+                },
+                dialog: {
+                    image: {
+                        title: "Image",
+                        imagesearch: "Image search",
+                        keyword: "Keyword：",
+                        placeholder: "Please input the keyword for search",
+                        baidu: "Search",
+                        linkimage: "Linked Image",
+                        linkurl: "URL：",
+                        placeholder2: "Must：start with http(s)://",
+                        imagehint: "Hint：",
+                        placeholder3: "Optional：The text that the mouse prompts when hovering over the image",
+                        preview: "Image preview：",
+                        uploadimage: "Upload Image",
+                        selectfile: "Select file...",
+                        ok: "OK",
+                        cancel: "Cancel",
+                        formatinfo: "file ext must be jpg、gif or png"
+                    },
+                    hyperlink: {
+                        title: "Link",
+                        linkurl: "Link url：",
+                        linkhint: "Hint：",
+                        placeholder: "Require：start with http(s):// or ftp://",
+                        placeholder2: "OPtional: The text that the mouse prompts when hovering over the link",
+                        ok: "OK",
+                        cancel: "Cancel"
+                    },
+                    exportnode: {
+                        title: "Export Node",
+                        ok: "OK",
+                        cancel: "Cancel"
+                    }
+                }
+            }
+        };
+    }
+};
+
+//l10n/en.js
+_p[26] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "Mind map",
+                tianpan: "Sky map",
+                structure: "Organization Chart",
+                filetree: "Directory organization chart",
+                right: "logical structure diagram",
+                "fish-bone": "Fish bone figure"
+            },
+            theme: {
+                classic: "Classic",
+                "classic-compact": "Compact classic",
+                snow: "Gentle cold light",
+                "snow-compact": "Compact cold light",
+                fish: "Fish bone map",
+                wire: "Wireframe",
+                "fresh-red": "Fresh red",
+                "fresh-soil": "Dirty yellow",
+                "fresh-green": "Artistic Green",
+                "fresh-blue": "Sky Blue",
+                "fresh-purple": "Romantic Purple",
+                "fresh-pink": "Mind powder",
+                "fresh-red-compat": "Compact red",
+                "fresh-soil-compat": "Compact yellow",
+                "fresh-green-compat": "Compact green",
+                "fresh-blue-compat": "Compact blue",
+                "fresh-purple-compat": "Compact purple",
+                "fresh-pink-compat": "Compact powder",
+                tianpan: "Classic dial",
+                "tianpan-compact": "Compact day"
+            },
+            maintopic: "Center theme",
+            topic: "branch topic",
+            panels: {
+                history: "history",
+                template: "template",
+                theme: "skin",
+                layout: "layout",
+                style: "style",
+                font: "text",
+                color: "color",
+                background: "background",
+                insert: "insert",
+                arrange: "adjust",
+                nodeop: "current",
+                priority: "priority",
+                progress: "progress",
+                resource: "resource",
+                note: "note",
+                attachment: "attachment",
+                word: "text"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "Insert sibling node",
+                    appendparentnode: "Insert parent node",
+                    appendchildnode: "Insert child node",
+                    removenode: "Delete",
+                    editnode: "Edit",
+                    arrangeup: "Up",
+                    arrangedown: "Down",
+                    resetlayout: "Reset layout",
+                    expandtoleaf: "Expand all nodes",
+                    expandtolevel1: "Expand to level 1",
+                    expandtolevel2: "Expand to level 2",
+                    expandtolevel3: "Expand to level 3",
+                    expandtolevel4: "Expand to level 4",
+                    expandtolevel5: "Expand to level 5",
+                    expandtolevel6: "Expand to level 6",
+                    fullscreen: "full screen",
+                    outline: "outline"
+                },
+                search: "Search",
+                expandtoleaf: "Expand",
+                back: "return",
+                undo: "Undo (Ctrl + Z)",
+                redo: "Redo (Ctrl + Y)",
+                tabs: {
+                    idea: "Idea",
+                    appearence: "Appearance",
+                    view: "View"
+                },
+                bold: "Bold",
+                italic: "Italic",
+                forecolor: "Font color",
+                fontfamily: "Font",
+                fontsize: "Size",
+                layoutstyle: "Theme",
+                node: "Node operation",
+                hand: "Allow dragging",
+                camera: "Locate the root node",
+                "zoom-in": "Zoom in (Ctrl+)",
+                "zoom-out": "Zoom out (Ctrl-)",
+                markers: "tag",
+                help: "Help",
+                preference: "Preferences",
+                expandnode: "Expand to leaf",
+                collapsenode: "receive a level one node",
+                template: "template",
+                theme: "skin",
+                clearstyle: "Clear style",
+                copystyle: "Copy style",
+                pastestyle: "Paste style",
+                appendsiblingnode: "same theme",
+                appendchildnode: "subordinate theme",
+                arrangeup: "pre-tune",
+                arrangedown: "post-tune",
+                editnode: "Edit",
+                removenode: "remove",
+                priority: "Priority",
+                progress: {
+                    p1: "not started",
+                    p2: "Complete 1/8",
+                    p3: "Complete 1/4",
+                    p4: "Complete 3/8",
+                    p5: "Complete half",
+                    p6: "Complete 5/8",
+                    p7: "Complete 3/4",
+                    p8: "Complete 7/8",
+                    p9: "Completed",
+                    p0: "Clear progress"
+                },
+                resource: {
+                    add: "Add"
+                },
+                link: "Link",
+                image: "Image",
+                note: "Note",
+                insertlink: "Insert link",
+                insertimage: "Insert image",
+                insertnote: "Insert note",
+                removelink: "Remove existing links",
+                removeimage: "Remove existing image",
+                removenote: "Remove existing notes",
+                resetlayout: "Organize",
+                navigator: "Navigator",
+                selectall: "Select all",
+                selectrevert: "Select revert",
+                selectsiblings: "Select siblings",
+                selectlevel: "Select level",
+                selectpath: "Select path",
+                selecttree: "Select subtree",
+                noteeditor: {
+                    title: "Note",
+                    hint: "Support GFM grammar",
+                    placeholder: "Please select a node to edit note"
+                },
+                dialog: {
+                    image: {
+                        title: "Image",
+                        imagesearch: "Image search",
+                        keyword: "Keyword：",
+                        placeholder: "Please input the keyword for search",
+                        baidu: "Search",
+                        linkimage: "Linked Image",
+                        linkurl: "URL：",
+                        placeholder2: "Require：start with http(s)://",
+                        imagehint: "Hint：",
+                        placeholder3: "Optional：The text that the mouse prompts when hovering over the image",
+                        preview: "Image preview：",
+                        uploadimage: "Upload Image",
+                        selectfile: "Select file...",
+                        ok: "OK",
+                        cancel: "Cancel",
+                        formatinfo: "file ext must be jpg、gif or png"
+                    },
+                    hyperlink: {
+                        title: "Link",
+                        linkurl: "Link url：",
+                        linkhint: "Hint：",
+                        placeholder: "Require：start with http(s):// or ftp://",
+                        placeholder2: "Optional: The text that the mouse prompts when hovering over the link",
+                        ok: "OK",
+                        cancel: "Cancel"
+                    },
+                    exportnode: {
+                        title: "Export Node",
+                        ok: "OK",
+                        cancel: "Cancel"
+                    }
+                }
+            }
+        };
+    }
+};
+
+//l10n/zh_CN.js
+_p[27] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "思维导图",
+                tianpan: "天盘图",
+                structure: "组织结构图",
+                filetree: "目录组织图",
+                right: "逻辑结构图",
+                "fish-bone": "鱼骨头图"
+            },
+            theme: {
+                classic: "脑图经典",
+                "classic-compact": "紧凑经典",
+                snow: "温柔冷光",
+                "snow-compact": "紧凑冷光",
+                fish: "鱼骨图",
+                wire: "线框",
+                "fresh-red": "清新红",
+                "fresh-soil": "泥土黄",
+                "fresh-green": "文艺绿",
+                "fresh-blue": "天空蓝",
+                "fresh-purple": "浪漫紫",
+                "fresh-pink": "脑残粉",
+                "fresh-red-compat": "紧凑红",
+                "fresh-soil-compat": "紧凑黄",
+                "fresh-green-compat": "紧凑绿",
+                "fresh-blue-compat": "紧凑蓝",
+                "fresh-purple-compat": "紧凑紫",
+                "fresh-pink-compat": "紧凑粉",
+                tianpan: "经典天盘",
+                "tianpan-compact": "紧凑天盘"
+            },
+            maintopic: "中心主题",
+            topic: "分支主题",
+            panels: {
+                history: "历史",
+                template: "模板",
+                theme: "皮肤",
+                layout: "布局",
+                style: "样式",
+                font: "文字",
+                color: "颜色",
+                background: "背景",
+                insert: "插入",
+                arrange: "调整",
+                nodeop: "当前",
+                priority: "优先级",
+                progress: "进度",
+                resource: "资源",
+                note: "备注",
+                attachment: "附件",
+                word: "文字"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "插入同级主题",
+                    appendparentnode: "插入上级主题",
+                    appendchildnode: "插入下级主题",
+                    removenode: "删除",
+                    editnode: "编辑",
+                    arrangeup: "上移",
+                    arrangedown: "下移",
+                    resetlayout: "整理布局",
+                    expandtoleaf: "展开全部节点",
+                    expandtolevel1: "展开到一级节点",
+                    expandtolevel2: "展开到二级节点",
+                    expandtolevel3: "展开到三级节点",
+                    expandtolevel4: "展开到四级节点",
+                    expandtolevel5: "展开到五级节点",
+                    expandtolevel6: "展开到六级节点",
+                    fullscreen: "全屏",
+                    outline: "大纲"
+                },
+                search: "搜索",
+                expandtoleaf: "展开",
+                back: "返回",
+                undo: "撤销 (Ctrl + Z)",
+                redo: "重做 (Ctrl + Y)",
+                tabs: {
+                    idea: "思路",
+                    appearence: "外观",
+                    view: "视图"
+                },
+                bold: "加粗",
+                italic: "斜体",
+                forecolor: "字体颜色",
+                fontfamily: "字体",
+                fontsize: "字号",
+                layoutstyle: "主题",
+                node: "节点操作",
+                hand: "允许拖拽",
+                camera: "定位根节点",
+                "zoom-in": "放大（Ctrl+）",
+                "zoom-out": "缩小（Ctrl-）",
+                markers: "标签",
+                help: "帮助",
+                preference: "偏好设置",
+                expandnode: "展开到叶子",
+                collapsenode: "收起到一级节点",
+                template: "模板",
+                theme: "皮肤",
+                clearstyle: "清除样式",
+                copystyle: "复制样式",
+                pastestyle: "粘贴样式",
+                appendsiblingnode: "同级主题",
+                appendchildnode: "下级主题",
+                arrangeup: "前调",
+                arrangedown: "后调",
+                editnode: "编辑",
+                removenode: "移除",
+                priority: "优先级",
+                progress: {
+                    p1: "未开始",
+                    p2: "完成 1/8",
+                    p3: "完成 1/4",
+                    p4: "完成 3/8",
+                    p5: "完成一半",
+                    p6: "完成 5/8",
+                    p7: "完成 3/4",
+                    p8: "完成 7/8",
+                    p9: "已完成",
+                    p0: "清除进度"
+                },
+                resource: {
+                    add: "添加"
+                },
+                link: "链接",
+                image: "图片",
+                note: "备注",
+                insertlink: "插入链接",
+                insertimage: "插入图片",
+                insertnote: "插入备注",
+                removelink: "移除已有链接",
+                removeimage: "移除已有图片",
+                removenote: "移除已有备注",
+                resetlayout: "整理",
+                navigator: "导航器",
+                selectall: "全选",
+                selectrevert: "反选",
+                selectsiblings: "选择兄弟节点",
+                selectlevel: "选择同级节点",
+                selectpath: "选择路径",
+                selecttree: "选择子树",
+                noteeditor: {
+                    title: "备注",
+                    hint: "支持 GFM 语法书写",
+                    placeholder: "请选择节点编辑备注"
+                },
+                dialog: {
+                    image: {
+                        title: "图片",
+                        imagesearch: "图片搜索",
+                        keyword: "关键词：",
+                        placeholder: "请输入搜索的关键词",
+                        baidu: "百度一下",
+                        linkimage: "外链图片",
+                        linkurl: "链接地址：",
+                        placeholder2: "必填：以 http(s):// 开头",
+                        imagehint: "提示文本：",
+                        placeholder3: "选填：鼠标在图片上悬停时提示的文本",
+                        preview: "图片预览：",
+                        uploadimage: "上传图片",
+                        selectfile: "选择文件...",
+                        ok: "确定",
+                        cancel: "取消",
+                        formatinfo: "后缀只能是 jpg、gif 及 png"
+                    },
+                    hyperlink: {
+                        title: "链接",
+                        linkurl: "链接地址：",
+                        linkhint: "提示文本：",
+                        placeholder: "必填：以 http(s):// 或 ftp:// 开头",
+                        placeholder2: "选填：鼠标在链接上悬停时提示的文本",
+                        ok: "确定",
+                        cancel: "取消"
+                    },
+                    exportnode: {
+                        title: "导出节点",
+                        ok: "确定",
+                        cancel: "取消"
+                    }
+                }
+            }
+        };
+    }
+};
+
 var moduleMapping = {
     "expose-editor": 1
 };
@@ -2132,14 +2717,14 @@ angular.module('kityminderEditor').run(['$templateCache', function($templateCach
 
 
   $templateCache.put('ui/directive/noteEditor/noteEditor.html',
-    "<div class=\"panel panel-default\" ng-init=\"noteEditorOpen = false\" ng-show=\"noteEditorOpen\"><div class=\"panel-heading\"><h3 class=\"panel-title\">备注</h3><span>（<a class=\"help\" href=\"https://www.zybuluo.com/techird/note/46064\" target=\"_blank\">支持 GFM 语法书写</a>）</span> <i class=\"close-note-editor glyphicon glyphicon-remove\" ng-click=\"closeNoteEditor()\"></i></div><div class=\"panel-body\"><div ng-show=\"noteEnabled\" ui-codemirror=\"{ onLoad: codemirrorLoaded }\" ng-model=\"noteContent\" ui-codemirror-opts=\"{\n" +
+    "<div class=\"panel panel-default\" ng-init=\"noteEditorOpen = false\" ng-show=\"noteEditorOpen\"><div class=\"panel-heading\"><h3 class=\"panel-title\">{{ 'title' | lang: 'ui/noteeditor' }}</h3><span>（<a class=\"help\" href=\"https://www.zybuluo.com/techird/note/46064\" target=\"_blank\">{{ 'hint' | lang: 'ui/noteeditor' }}</a>）</span> <i class=\"close-note-editor glyphicon glyphicon-remove\" ng-click=\"closeNoteEditor()\"></i></div><div class=\"panel-body\"><div ng-show=\"noteEnabled\" ui-codemirror=\"{ onLoad: codemirrorLoaded }\" ng-model=\"noteContent\" ui-codemirror-opts=\"{\n" +
     "                gfm: true,\n" +
     "                breaks: true,\n" +
     "                lineWrapping : true,\n" +
     "                mode: 'gfm',\n" +
     "                dragDrop: false,\n" +
     "                lineNumbers:true\n" +
-    "             }\"></div><p ng-show=\"!noteEnabled\" class=\"km-note-tips\">请选择节点编辑备注</p></div></div>"
+    "             }\"></div><p ng-show=\"!noteEnabled\" class=\"km-note-tips\">{{ 'placeholder' | lang: 'ui/noteeditor' }}</p></div></div>"
   );
 
 
@@ -2209,13 +2794,13 @@ angular.module('kityminderEditor').run(['$templateCache', function($templateCach
 
 
   $templateCache.put('ui/dialog/hyperlink/hyperlink.tpl.html',
-    "<div class=\"modal-header\"><h3 class=\"modal-title\">链接</h3></div><div class=\"modal-body\"><form><div class=\"form-group\" id=\"link-url-wrap\" ng-class=\"{true: 'has-success', false: 'has-error'}[urlPassed]\"><label for=\"link-url\">链接地址：</label><input type=\"text\" class=\"form-control\" ng-model=\"url\" ng-blur=\"urlPassed = R_URL.test(url)\" ng-focus=\"this.value = url\" ng-keydown=\"shortCut($event)\" id=\"link-url\" placeholder=\"必填：以 http(s):// 或 ftp:// 开头\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"link-title\">提示文本：</label><input type=\"text\" class=\"form-control\" ng-model=\"title\" ng-blur=\"titlePassed = true\" id=\"link-title\" placeholder=\"选填：鼠标在链接上悬停时提示的文本\"></div></form></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">确定</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">取消</button></div>"
+    "<div class=\"modal-header\"><h3 class=\"modal-title\">{{ 'title' | lang: 'ui/dialog/hyperlink'}}</h3></div><div class=\"modal-body\"><form><div class=\"form-group\" id=\"link-url-wrap\" ng-class=\"{true: 'has-success', false: 'has-error'}[urlPassed]\"><label for=\"link-url\">{{ 'linkurl' | lang: 'ui/dialog/hyperlink'}}</label><input type=\"text\" class=\"form-control\" ng-model=\"url\" ng-blur=\"urlPassed = R_URL.test(url)\" ng-focus=\"this.value = url\" ng-keydown=\"shortCut($event)\" id=\"link-url\" placeholder=\"{{ 'placeholder' | lang: 'ui/dialog/hyperlink'}}\"></div><div class=\"form-group\" ng-class=\"{'has-success' : titlePassed}\"><label for=\"link-title\">{{ 'linkhint' | lang: 'ui/dialog/hyperlink'}}</label><input type=\"text\" class=\"form-control\" ng-model=\"title\" ng-blur=\"titlePassed = true\" id=\"link-title\" placeholder=\"{{ 'placeholder2' | lang: 'ui/dialog/hyperlink'}}\"></div></form></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\">{{ 'ok' | lang: 'ui/dialog/hyperlink'}}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">{{ 'cancel' | lang: 'ui/dialog/hyperlink'}}</button></div>"
   );
 
 
   $templateCache.put('ui/dialog/imExportNode/imExportNode.tpl.html',
     "<div class=\"modal-header\"><h3 class=\"modal-title\">{{ title }}</h3></div><div class=\"modal-body\"><textarea type=\"text\" class=\"form-control single-input\" rows=\"8\" ng-keydown=\"shortCut($event);\" ng-model=\"value\" ng-readonly=\"type === 'export'\">\n" +
-    "    </textarea></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\" ng-disabled=\"type === 'import' && value == ''\">OK</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">Cancel</button></div>"
+    "    </textarea></div><div class=\"modal-footer\"><button class=\"btn btn-primary\" ng-click=\"ok()\" ng-disabled=\"type === 'import' && value == ''\">{{ 'ok' | lang: 'ui/dialog/exportnode'}}</button> <button class=\"btn btn-warning\" ng-click=\"cancel()\">{{ 'cancel' | lang: 'ui/dialog/exportnode'}}</button></div>"
   );
 
 
@@ -2305,504 +2890,6 @@ angular.module('kityminderEditor')
 			};
 		}
 	});
-angular.module('kityminderEditor')
-    .service('lang.de', function() {
-        return {
-            'template': {
-                'default': 'Mind Map',
-                'tianpan': 'Tianpan Karte',
-                'structure': 'Organigramm',
-                'filetree': 'Verzeichnis-Organigramm',
-                'right': 'Logisches Strukturdiagramm',
-                'fish-bone': 'Fischknochenfigur'
-            },
-            'theme': {
-                'classic': 'Classic',
-                'classic-compact': 'Classic Kompakt',
-                'snow': 'sanfte Licht',
-                'snow-compact': 'Kompakt kalt',
-                'fish': 'Fischknochen',
-                'wire': 'Drahtgitter',
-                'fresh-red': 'Frisches Rot',
-                'fresh-soil': 'Boden gelb',
-                'fresh-green': 'Literarisches Grün',
-                'fresh-blue': 'Himmelblau',
-                'fresh-purple': 'Romantisches Lila',
-                'fresh-pink': 'Gehirnpulver',
-                'fresh-red-compat': 'Kompakt rot',
-                'fresh-soil-compat': 'Kompakt gelb',
-                'fresh-green-compat': 'Kompaktgrün',
-                'fresh-blue-compat': 'Kompakt blau',
-                'fresh-purple-compat': 'Kompaktes Lila',
-                'fresh-pink-compat': 'Kompaktes Pulver',
-                'tianpan': 'Zifferblatt',
-                'tianpan-compact': 'Kompakter Tag'
-            },
-            'maintopic': 'Zentrierthema',
-            'topic': 'Branchenthema',
-            'panels': {
-                'history': 'Verlauf',
-                'template': 'Vorlage',
-                'theme': 'Haut',
-                'layout': 'Layout',
-                'style': 'Stil',
-                'font': 'Text',
-                'color': 'Farbe',
-                'background': 'Hintergrund',
-                'insert': 'Einfügen',
-                'arrange': 'Anpassung',
-                'nodeop': 'aktuell',
-                'priority': 'Priorität',
-                'progress': 'Fortschritt',
-                'resource': 'Ressourcen',
-                'note': 'Bemerkungen',
-                'attachment': 'Anlage',
-                'word': 'Text'
-            },
-            'ui': {
-                'command': {
-                    'appendsiblingnode': 'Neuer Geschwisterknoten',
-                    'appendparentnode': 'Neuen Überknoten unterhalb',
-                    'appendchildnode': 'Neuer Unterknoten',
-                    'removenode': 'Löschen',
-                    'editnode': 'Bearbeiten',
-                    'arrangeup': 'Hoch',
-                    'arrangedown': 'Runter',
-                    'resetlayout': 'Layout organisieren',
-                    'expandtoleaf': 'Alle Knoten ausklappen',
-                    'expandtolevel1': 'Ausklappen bis auf Level 1 Knoten',
-                    'expandtolevel2': 'Ausklappen bis zu sekundären Knoten',
-                    'expandtolevel3': 'Ausklappen bis zu Knoten der dritten Ebene',
-                    'expandtolevel4': 'Ausklappen bis zu vierstufigen Knoten',
-                    'expandtolevel5': 'Ausklappen bis zu fünfstufigen Knoten',
-                    'expandtolevel6': 'Ausklappen bis zu sechsstufigen Knoten',
-                    'fullscreen': 'Vollbild',
-                    'outline': 'Gliederung'
-                },
-                'search':'suchen',
-                'expandtoleaf': 'Erweitern',
-                'back': 'Zurück',
-                'undo': 'Rückgängig (Strg + Z)',
-                'redo': 'Wiederholen (Strg + Y)',
-                'tabs': {
-                    'idea': 'Idee',
-                    'appearence': 'Aussehen',
-                    'view': 'Ansicht'
-                },
-                'bold': 'Fett',
-                'italic': 'Kursiv',
-                'forecolor': 'Schriftfarbe',
-                'fontfamily': 'Schriftart',
-                'fontsize': 'Schriftgröße',
-                'layoutstyle': 'Thema',
-                'node': 'Knotenoperation',
-                'hand': 'Ziehen erlauben',
-                'camera': 'Stammknoten zentrieren',
-                'zoom-in': 'Vergrößern (Strg +)',
-                'zoom-out': 'Verkleinern (Strg)',
-                'markers': 'Markierungen',
-                'help': 'Hilfe',
-                'preference': 'Einstellungen',
-                'expandnode': 'Auf das Blatt erweitern',
-                'collapsenode': 'einen Level-1-Knoten erhalten',
-                'template': 'Vorlage',
-                'theme': 'Haut',
-                'clearstyle': 'Stil entfernen',
-                'copystyle': 'Stil kopieren',
-                'pastestyle': 'Stil einfügen',
-                'appendsiblingnode': 'Gleiches Thema',
-                'appendchildnode': 'Untergeordnetes Thema',
-                'arrangeup': 'Voreinstellung',
-                'arrangedown': 'Nachstimmen',
-                'editnode': 'Bearbeiten',
-                'removenode': 'Entfernen',
-                'priority': 'Priorität',
-                'progress': {
-                    'p1': 'Nicht begonnen',
-                    'p2': '1/8 fertiggestellt',
-                    'p3': '1/4 fertiggestellt',
-                    'p4': '3/8 fertiggestellt',
-                    'p5': '1/2 fertiggestellt',
-                    'p6': '5/8 fertiggestellt',
-                    'p7': '3/4 fertiggestellt',
-                    'p8': '7/8 fertiggestellt',
-                    'p9': 'Abgeschlossen',
-                    'p0': 'Klarer Fortschritt'
-                },
-                'resource': {
-                    'add': 'hinzufügen'
-                },
-                'link': 'Link',
-                'image': 'Bild',
-                'note': 'Notiz',
-                'insertlink': 'Link einfügen',
-                'insertimage': 'Bild einfügen',
-                'insertnote': 'Notiz einfügen',
-                'removelink': 'Bestehende Links entfernen',
-                'removeimage': 'Bestehendes Bild entfernen',
-                'removenote': 'Bestehende Notizen entfernen',
-                'resetlayout': 'Organisieren',
-                'navigator': 'Navigator',
-                'selectall': 'Alles auswählen',
-                'selectrevert': 'Auswahl umkehren',
-                'selectsiblings': 'Geschwisterknoten auswählen',
-                'selectlevel': 'Alle Knoten derselben Eben',
-                'selectpath': 'Pfad auswählen',
-                'selecttree': 'Teilbaum auswählen',
-                'dialog': {
-                    'image': {
-                        'title': 'Image',
-                        'imagesearch': 'Image search',
-                        'keyword': 'Keyword：',
-                        'placeholder': 'Please input the keyword for search',
-                        'baidu': 'Search',
-                        'linkimage': 'Linked Image',
-                        'linkurl': 'URL：',
-                        'placeholder2': 'Must：start with http(s)://',
-                        'imagehint': 'Hint：',
-                        'placeholder3': 'Optional：The text that the mouse prompts when hovering over the image',
-                        'preview': 'Image preview：',
-                        'uploadimage': 'Upload Image',
-                        'selectfile': 'Select file...',
-                        'ok': 'OK',
-                        'cancel': 'Cancel'
-                    }
-                }
-            }
-        };
-    });
-angular.module('kityminderEditor')
-    .service('lang.en', function() {
-        return {
-            'template': {
-                'default': 'Mind map',
-                'tianpan': 'Sky map',
-                'structure': 'Organization Chart',
-                'filetree': 'Directory organization chart',
-                'right': 'logical structure diagram',
-                'fish-bone': 'Fish bone figure'
-            },
-            'theme': {
-                'classic': 'Classic',
-                'classic-compact': 'Compact classic',
-                'snow': 'Gentle cold light',
-                'snow-compact': 'Compact cold light',
-                'fish': 'Fish bone map',
-                'wire': 'Wireframe',
-                'fresh-red': 'Fresh red',
-                'fresh-soil': 'Dirty yellow',
-                'fresh-green': 'Artistic Green',
-                'fresh-blue': 'Sky Blue',
-                'fresh-purple': 'Romantic Purple',
-                'fresh-pink': 'Mind powder',
-                'fresh-red-compat': 'Compact red',
-                'fresh-soil-compat': 'Compact yellow',
-                'fresh-green-compat': 'Compact green',
-                'fresh-blue-compat': 'Compact blue',
-                'fresh-purple-compat': 'Compact purple',
-                'fresh-pink-compat': 'Compact powder',
-                'tianpan': 'Classic dial',
-                'tianpan-compact': 'Compact day'
-            },
-            'maintopic': 'Center theme',
-            'topic': 'branch topic',
-            'panels': {
-                'history': 'history',
-                'template': 'template',
-                'theme': 'skin',
-                'layout': 'layout',
-                'style': 'style',
-                'font': 'text',
-                'color': 'color',
-                'background': 'background',
-                'insert': 'insert',
-                'arrange': 'adjust',
-                'nodeop': 'current',
-                'priority': 'priority',
-                'progress': 'progress',
-                'resource': 'resource',
-                'note': 'note',
-                'attachment': 'attachment',
-                'word': 'text'
-            },
-            'ui': {
-                'command': {
-                    'appendsiblingnode': 'Insert sibling node',
-                    'appendparentnode': 'Insert parent node',
-                    'appendchildnode': 'Insert child node',
-                    'removenode': 'Delete',
-                    'editnode': 'Edit',
-                    'arrangeup': 'Up',
-                    'arrangedown': 'Down',
-                    'resetlayout': 'Reset layout',
-                    'expandtoleaf': 'Expand all nodes',
-                    'expandtolevel1': 'Expand to level 1',
-                    'expandtolevel2': 'Expand to level 2',
-                    'expandtolevel3': 'Expand to level 3',
-                    'expandtolevel4': 'Expand to level 4',
-                    'expandtolevel5': 'Expand to level 5',
-                    'expandtolevel6': 'Expand to level 6',
-                    'fullscreen': 'full screen',
-                    'outline': 'outline'
-                },
-                'search': 'Search',
-                'expandtoleaf': 'Expand',
-                'back': 'return',
-                'undo': 'Undo (Ctrl + Z)',
-                'redo': 'Redo (Ctrl + Y)',
-                'tabs': {
-                    'idea': 'Idea',
-                    'appearence': 'Appearance',
-                    'view': 'View'
-                },
-                'bold': 'Bold',
-                'italic': 'Italic',
-                'forecolor': 'Font color',
-                'fontfamily': 'Font',
-                'fontsize': 'Size',
-                'layoutstyle': 'Theme',
-                'node': 'Node operation',
-                'hand': 'Allow dragging',
-                'camera': 'Locate the root node',
-                'zoom-in': 'Zoom in (Ctrl+)',
-                'zoom-out': 'Zoom out (Ctrl-)',
-                'markers': 'tag',
-                'help': 'Help',
-                'preference': 'Preferences',
-                'expandnode': 'Expand to leaf',
-                'collapsenode': 'receive a level one node',
-                'template': 'template',
-                'theme': 'skin',
-                'clearstyle': 'Clear style',
-                'copystyle': 'Copy style',
-                'pastestyle': 'Paste style',
-                'appendsiblingnode': 'same theme',
-                'appendchildnode': 'subordinate theme',
-                'arrangeup': 'pre-tune',
-                'arrangedown': 'post-tune',
-                'editnode': 'Edit',
-                'removenode': 'remove',
-                'priority': 'Priority',
-                'progress': {
-                    'p1': 'not started',
-                    'p2': 'Complete 1/8',
-                    'p3': 'Complete 1/4',
-                    'p4': 'Complete 3/8',
-                    'p5': 'Complete half',
-                    'p6': 'Complete 5/8',
-                    'p7': 'Complete 3/4',
-                    'p8': 'Complete 7/8',
-                    'p9': 'Completed',
-                    'p0': 'Clear progress'
-                },
-                'resource': {
-                    'add': 'Add'
-                },
-                'link': 'Link',
-                'image': 'Image',
-                'note': 'Note',
-                'insertlink': 'Insert link',
-                'insertimage': 'Insert image',
-                'insertnote': 'Insert note',
-                'removelink': 'Remove existing links',
-                'removeimage': 'Remove existing image',
-                'removenote': 'Remove existing notes',
-                'resetlayout': 'Organize',
-                'navigator': 'Navigator',
-                'selectall': 'Select all',
-                'selectrevert': 'Select revert',
-                'selectsiblings': 'Select siblings',
-                'selectlevel': 'Select level',
-                'selectpath': 'Select path',
-                'selecttree': 'Select subtree',
-                'dialog': {
-                    'image': {
-                        'title': 'Image',
-                        'imagesearch': 'Image search',
-                        'keyword': 'Keyword：',
-                        'placeholder': 'Please input the keyword for search',
-                        'baidu': 'Search',
-                        'linkimage': 'Linked Image',
-                        'linkurl': 'URL：',
-                        'placeholder2': 'Require：start with http(s)://',
-                        'imagehint': 'Hint：',
-                        'placeholder3': 'Optional：The text that the mouse prompts when hovering over the image',
-                        'preview': 'Image preview：',
-                        'uploadimage': 'Upload Image',
-                        'selectfile': 'Select file...',
-                        'ok': 'OK',
-                        'cancel': 'Cancel'
-                    }
-                }
-            }
-        };
-    });
-angular.module('kityminderEditor')
-    .service('lang.zh_CN', function() {
-        return {
-            'template': {
-                'default': '思维导图',
-                'tianpan': '天盘图',
-                'structure': '组织结构图',
-                'filetree': '目录组织图',
-                'right': '逻辑结构图',
-                'fish-bone': '鱼骨头图'
-            },
-            'theme': {
-                'classic': '脑图经典',
-                'classic-compact': '紧凑经典',
-                'snow': '温柔冷光',
-                'snow-compact': '紧凑冷光',
-                'fish': '鱼骨图',
-                'wire': '线框',
-                'fresh-red': '清新红',
-                'fresh-soil': '泥土黄',
-                'fresh-green': '文艺绿',
-                'fresh-blue': '天空蓝',
-                'fresh-purple': '浪漫紫',
-                'fresh-pink': '脑残粉',
-                'fresh-red-compat': '紧凑红',
-                'fresh-soil-compat': '紧凑黄',
-                'fresh-green-compat': '紧凑绿',
-                'fresh-blue-compat': '紧凑蓝',
-                'fresh-purple-compat': '紧凑紫',
-                'fresh-pink-compat': '紧凑粉',
-                'tianpan':'经典天盘',
-                'tianpan-compact': '紧凑天盘'
-            },
-            'maintopic': '中心主题',
-            'topic': '分支主题',
-            'panels': {
-                'history': '历史',
-                'template': '模板',
-                'theme': '皮肤',
-                'layout': '布局',
-                'style': '样式',
-                'font': '文字',
-                'color': '颜色',
-                'background': '背景',
-                'insert': '插入',
-                'arrange': '调整',
-                'nodeop': '当前',
-                'priority': '优先级',
-                'progress': '进度',
-                'resource': '资源',
-                'note': '备注',
-                'attachment': '附件',
-                'word': '文字'
-            },
-            'ui': {
-                'command': {
-                    'appendsiblingnode': '插入同级主题',
-                    'appendparentnode': '插入上级主题',
-                    'appendchildnode': '插入下级主题',
-                    'removenode': '删除',
-                    'editnode': '编辑',
-                    'arrangeup': '上移',
-                    'arrangedown': '下移',
-                    'resetlayout': '整理布局',
-                    'expandtoleaf': '展开全部节点',
-                    'expandtolevel1': '展开到一级节点',
-                    'expandtolevel2': '展开到二级节点',
-                    'expandtolevel3': '展开到三级节点',
-                    'expandtolevel4': '展开到四级节点',
-                    'expandtolevel5': '展开到五级节点',
-                    'expandtolevel6': '展开到六级节点',
-                    'fullscreen': '全屏',
-                    'outline': '大纲'
-                },
-                'search':'搜索',
-                'expandtoleaf': '展开',
-                'back': '返回',
-                'undo': '撤销 (Ctrl + Z)',
-                'redo': '重做 (Ctrl + Y)',
-                'tabs': {
-                    'idea': '思路',
-                    'appearence': '外观',
-                    'view': '视图'
-                },
-                'bold': '加粗',
-                'italic': '斜体',
-                'forecolor': '字体颜色',
-                'fontfamily': '字体',
-                'fontsize': '字号',
-                'layoutstyle': '主题',
-                'node': '节点操作',
-                'hand': '允许拖拽',
-                'camera': '定位根节点',
-                'zoom-in': '放大（Ctrl+）',
-                'zoom-out': '缩小（Ctrl-）',
-                'markers': '标签',
-                'help': '帮助',
-                'preference': '偏好设置',
-                'expandnode': '展开到叶子',
-                'collapsenode': '收起到一级节点',
-                'template': '模板',
-                'theme': '皮肤',
-                'clearstyle': '清除样式',
-                'copystyle': '复制样式',
-                'pastestyle': '粘贴样式',
-                'appendsiblingnode': '同级主题',
-                'appendchildnode': '下级主题',
-                'arrangeup': '前调',
-                'arrangedown': '后调',
-                'editnode': '编辑',
-                'removenode': '移除',
-                'priority': '优先级',
-                'progress': {
-                    'p1': '未开始',
-                    'p2': '完成 1/8',
-                    'p3': '完成 1/4',
-                    'p4': '完成 3/8',
-                    'p5': '完成一半',
-                    'p6': '完成 5/8',
-                    'p7': '完成 3/4',
-                    'p8': '完成 7/8',
-                    'p9': '已完成',
-                    'p0': '清除进度'
-                },
-                'resource': {
-                    'add': '添加'
-                },
-                'link': '链接',
-                'image': '图片',
-                'note': '备注',
-                'insertlink': '插入链接',
-                'insertimage': '插入图片',
-                'insertnote': '插入备注',
-                'removelink': '移除已有链接',
-                'removeimage': '移除已有图片',
-                'removenote': '移除已有备注',
-                'resetlayout': '整理',
-                'navigator': '导航器',
-                'selectall': '全选',
-                'selectrevert': '反选',
-                'selectsiblings': '选择兄弟节点',
-                'selectlevel': '选择同级节点',
-                'selectpath': '选择路径',
-                'selecttree': '选择子树',
-                'dialog': {
-                    'image': {
-                        'title': '图片',
-                        'imagesearch': '图片搜索',
-                        'keyword': '关键词：',
-                        'placeholder': '请输入搜索的关键词',
-                        'baidu': '百度一下',
-                        'linkimage': '外链图片',
-                        'linkurl': '链接地址：',
-                        'placeholder2': '必填：以 http(s):// 开头',
-                        'imagehint': '提示文本：',
-                        'placeholder3': '选填：鼠标在图片上悬停时提示的文本',
-                        'preview': '图片预览：',
-                        'uploadimage': '上传图片',
-                        'selectfile': '选择文件...',
-                        'ok': '确定',
-                        'cancel': '取消'
-                    }
-                }
-            }
-        };
-    });
 /**
  * @fileOverview
  *
@@ -3060,24 +3147,12 @@ angular.module('kityminderEditor')
 
 
 angular.module('kityminderEditor')
-    .filter('lang', ['config', '$injector',
-        function(config, $injector) {
-            return function(text, block) {
-                var defaultLang = config.get('defaultLang');
-                var dict = null;
-                try {
-                    dict = $injector.get('lang.' + defaultLang);
-                } catch(e) {
-                    dict = $injector.get('lang.en');
-                }
-                block.split('/').forEach(function(ele, idx) {
-                    dict = dict[ele];
-                });
-
-                return dict[text] || null;
-
-            };
-        }]);
+    .filter('lang', ['config', function(config) {
+        return function(text, block) {
+            var defaultLang = config.get('defaultLang');
+            return window.editor.lang(defaultLang, text, block);
+        };
+    }]);
 angular.module('kityminderEditor')
     .controller('hyperlink.ctrl', ["$scope", "$modalInstance", "link", function ($scope, $modalInstance, link) {
 
@@ -3221,7 +3296,8 @@ angular.module('kityminderEditor')
 
     }]);
 angular.module('kityminderEditor')
-    .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', 'server', function($http, $scope, $modalInstance, image, server) {
+    .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', '$filter', function($http, $scope, $modalInstance, image, $filter) {
+        scope.lang = $filter('lang');
 
         $scope.data = {
             list: [],
@@ -3293,7 +3369,7 @@ angular.module('kityminderEditor')
                 };
                 reader.readAsDataURL(file);
             } else {
-                alert("后缀只能是 jpg、gif 及 png");
+                alert(lang('formatinfo', 'ui/dialog/image'));
             }
         };
 

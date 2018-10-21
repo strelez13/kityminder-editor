@@ -11,6 +11,7 @@ define(function(require, exports, module) {
 
     function KMEditor(selector) {
         this.selector = selector;
+        this.lang = require('./lang');
         for (var i = 0; i < runtimes.length; i++) {
             if (typeof runtimes[i] == 'function') {
                 runtimes[i].call(this, this);
@@ -34,7 +35,6 @@ define(function(require, exports, module) {
     assemble(require('./runtime/jumping'));
     assemble(require('./runtime/priority'));
     assemble(require('./runtime/progress'));
-
 
     return module.exports = KMEditor;
 });

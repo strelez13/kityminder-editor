@@ -57,7 +57,7 @@
 <script>
 	angular.module('kityminderDemo', ['kityminderEditor'])
 			.config(function (configProvider) {
-				configProvider.set('imageUpload', '../server/imageUpload.php');
+				configProvider.set('defaultLang', 'en');
 			})
 			.controller('MainController', function($scope) {
 				$scope.initEditor = function(editor, minder) {
