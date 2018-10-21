@@ -142,6 +142,11 @@ angular.module('kityminderEditor')
                 'selectlevel': '选择同级节点',
                 'selectpath': '选择路径',
                 'selecttree': '选择子树',
+                'noteeditor': {
+                    'title': '备注',
+                    'hint': '支持 GFM 语法书写',
+                    'placeholder': '请选择节点编辑备注'
+                },
                 'dialog': {
                     'image': {
                         'title': '图片',
@@ -157,6 +162,22 @@ angular.module('kityminderEditor')
                         'preview': '图片预览：',
                         'uploadimage': '上传图片',
                         'selectfile': '选择文件...',
+                        'ok': '确定',
+                        'cancel': '取消',
+                        'formatinfo': '后缀只能是 jpg、gif 及 png'
+                    },
+                    'hyperlink': {
+                        'title': '链接',
+                        'linkurl': '链接地址：',
+                        'linkhint': '提示文本：',
+                        'placeholder': '必填：以 http(s):// 或 ftp:// 开头',
+                        'placeholder2': '选填：鼠标在链接上悬停时提示的文本',
+                        'ok': '确定',
+                        'cancel': '取消'
+
+                    },
+                    'exportnode': {
+                        'title': '导出节点',
                         'ok': '确定',
                         'cancel': '取消'
                     }

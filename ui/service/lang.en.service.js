@@ -142,6 +142,11 @@ angular.module('kityminderEditor')
                 'selectlevel': 'Select level',
                 'selectpath': 'Select path',
                 'selecttree': 'Select subtree',
+                'noteeditor': {
+                    'title': 'Note',
+                    'hint': 'Support GFM grammar',
+                    'placeholder': 'Please select a node to edit note'
+                },
                 'dialog': {
                     'image': {
                         'title': 'Image',
@@ -157,6 +162,22 @@ angular.module('kityminderEditor')
                         'preview': 'Image preview：',
                         'uploadimage': 'Upload Image',
                         'selectfile': 'Select file...',
+                        'ok': 'OK',
+                        'cancel': 'Cancel',
+                        'formatinfo': 'file ext must be jpg、gif or png'
+                    },
+                    'hyperlink': {
+                        'title': 'Link',
+                        'linkurl': 'Link url：',
+                        'linkhint': 'Hint：',
+                        'placeholder': 'Require：start with http(s):// or ftp://',
+                        'placeholder2': 'Optional: The text that the mouse prompts when hovering over the link',
+                        'ok': 'OK',
+                        'cancel': 'Cancel'
+
+                    },
+                    'exportnode': {
+                        'title': 'Export Node',
                         'ok': 'OK',
                         'cancel': 'Cancel'
                     }

@@ -1,5 +1,6 @@
 angular.module('kityminderEditor')
-    .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', 'server', function($http, $scope, $modalInstance, image, server) {
+    .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', '$filter', function($http, $scope, $modalInstance, image, $filter) {
+        scope.lang = $filter('lang');
 
         $scope.data = {
             list: [],
@@ -71,7 +72,7 @@ angular.module('kityminderEditor')
                 };
                 reader.readAsDataURL(file);
             } else {
-                alert("后缀只能是 jpg、gif 及 png");
+                alert(lang('formatinfo', 'ui/dialog/image'));
             }
         };
 
