@@ -1,6 +1,6 @@
 angular.module('kityminderEditor')
     .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', '$filter', function($http, $scope, $modalInstance, image, $filter) {
-        scope.lang = $filter('lang');
+        $scope.lang = $filter('lang');
 
         $scope.data = {
             list: [],

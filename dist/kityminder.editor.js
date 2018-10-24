@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * kityminder-editor - v1.0.64 - 2018-10-21
+ * kityminder-editor - v1.0.64 - 2018-10-24
  * https://github.com/fex-team/kityminder-editor
  * GitHub: https://github.com/fex-team/kityminder-editor 
  * Copyright (c) 2018 ; Licensed 
@@ -3395,7 +3395,7 @@ angular.module('kityminderEditor')
     }]);
 angular.module('kityminderEditor')
     .controller('image.ctrl', ['$http', '$scope', '$modalInstance', 'image', '$filter', function($http, $scope, $modalInstance, image, $filter) {
-        scope.lang = $filter('lang');
+        $scope.lang = $filter('lang');
 
         $scope.data = {
             list: [],
