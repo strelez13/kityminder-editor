@@ -108,7 +108,8 @@ define(function(require, exports, module) {
             'arrangedown': 'Descendre',
             'editnode': 'Editer',
             'removenode': 'Supprimer',
-            'priority': 'Priority',
+            'no priority' : 'Pas de priorité',
+	    'priority': 'Priorité',
             'progress': {
                 'p1': 'Non démarré',
                 'p2': 'Completé à 1/8',
@@ -118,7 +119,7 @@ define(function(require, exports, module) {
                 'p6': 'Completé à 5/8',
                 'p7': 'Completé à 3/4',
                 'p8': 'Completé à 7/8',
-                'p9': 'Completé',
+                'p9': 'Terminé',
                 'p0': 'Supprimer la progression'
             },
             'resource': {
@@ -179,7 +180,11 @@ define(function(require, exports, module) {
                     'title': 'Exporter le Noeud',
                     'ok': 'OK',
                     'cancel': 'Annuler'
-                }
+                },
+		'search': {
+			'result': 'Résultat',
+			'on': 'sur'
+		}
             }
         },
         'runtime': {
