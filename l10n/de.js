@@ -62,7 +62,7 @@ define(function(require, exports, module) {
                 'arrangedown': 'nach unten verschieben',
                 'resetlayout': 'Layout zurücksetzen',
                 'expandtoleaf': 'Alle Knoten ausklappen',
-                'expandtolevel1': 'Ausklappen bis Knoten der 1. Ebene'
+                'expandtolevel1': 'Ausklappen bis Knoten der 1. Ebene',
                 'expandtolevel2': 'Ausklappen bis zu Knoten der 2. Ebene',
                 'expandtolevel3': 'Ausklappen bis zu Knoten der 3. Ebene',
                 'expandtolevel4': 'Ausklappen bis zu Knoten der 4. Ebene',
