@@ -2,7 +2,7 @@ define(function(require, exports, module) {
     var langList = {
         'en': require('../l10n/en'),
         'de': require('../l10n/de'),
-	'fr': require ('../l10n/fr'),
+        'fr': require ('../l10n/fr'),
         'zh_CN': require('../l10n/zh_CN')
     };
     var defaultLang = 'en';
@@ -18,7 +18,7 @@ define(function(require, exports, module) {
             dict = dict[ele];
         });
 
-        if (dict === null) {
+        if (dict === undefined || dict === null) {
             return text;
         }
 

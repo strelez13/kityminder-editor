@@ -1,9 +1,9 @@
 /*!
  * ====================================================
- * kityminder-editor - v1.0.64 - 2018-10-24
+ * kityminder-editor - v1.0.64 - 2019-04-08
  * https://github.com/fex-team/kityminder-editor
  * GitHub: https://github.com/fex-team/kityminder-editor 
- * Copyright (c) 2018 ; Licensed 
+ * Copyright (c) 2019 ; Licensed 
  * ====================================================
  */
 
@@ -106,7 +106,8 @@ _p[3] = {
         var langList = {
             en: _p.r(26),
             de: _p.r(25),
-            zh_CN: _p.r(27)
+            fr: _p.r(27),
+            zh_CN: _p.r(28)
         };
         var defaultLang = "en";
         function lang(text, block, lang) {
@@ -120,7 +121,7 @@ _p[3] = {
             block.split("/").forEach(function(ele, idx) {
                 dict = dict[ele];
             });
-            if (dict === null) {
+            if (dict === undefined || dict === null) {
                 return text;
             }
             return dict[text] || text;
@@ -2092,83 +2093,83 @@ _p[25] = {
         return module.exports = {
             template: {
                 default: "Mind Map",
-                tianpan: "Tianpan Karte",
+                tianpan: "Spiralform",
                 structure: "Organigramm",
                 filetree: "Verzeichnis-Organigramm",
                 right: "Logisches Strukturdiagramm",
                 "fish-bone": "Fischknochenfigur"
             },
             theme: {
-                classic: "Classic",
-                "classic-compact": "Classic Kompakt",
-                snow: "sanfte Licht",
-                "snow-compact": "Kompakt kalt",
+                classic: "Klassisch",
+                "classic-compact": "Klassisch Kompakt",
+                snow: "Klassisch 2",
+                "snow-compact": "Kompakt klassisch 2",
                 fish: "Fischknochen",
                 wire: "Drahtgitter",
-                "fresh-red": "Frisches Rot",
-                "fresh-soil": "Boden gelb",
-                "fresh-green": "Literarisches Grün",
-                "fresh-blue": "Himmelblau",
-                "fresh-purple": "Romantisches Lila",
-                "fresh-pink": "Gehirnpulver",
+                "fresh-red": "Rot",
+                "fresh-soil": "Braun",
+                "fresh-green": "Grün",
+                "fresh-blue": "Blau",
+                "fresh-purple": "Lila",
+                "fresh-pink": "Pink",
                 "fresh-red-compat": "Kompakt rot",
-                "fresh-soil-compat": "Kompakt gelb",
-                "fresh-green-compat": "Kompaktgrün",
+                "fresh-soil-compat": "Kompakt braun",
+                "fresh-green-compat": "Kompakt grün",
                 "fresh-blue-compat": "Kompakt blau",
-                "fresh-purple-compat": "Kompaktes Lila",
-                "fresh-pink-compat": "Kompaktes Pulver",
-                tianpan: "Zifferblatt",
-                "tianpan-compact": "Kompakter Tag"
+                "fresh-purple-compat": "Kompakt lila",
+                "fresh-pink-compat": "Kompakt pink",
+                tianpan: "Runde Knoten",
+                "tianpan-compact": "Kompakt runde Knoten"
             },
-            maintopic: "Zentrierthema",
-            topic: "Branchenthema",
+            maintopic: "Hauptthema",
+            topic: "Zweigthema",
             panels: {
                 history: "Verlauf",
                 template: "Vorlage",
-                theme: "Haut",
+                theme: "Darstellung",
                 layout: "Layout",
                 style: "Stil",
-                font: "Text",
-                color: "Farbe",
-                background: "Hintergrund",
+                font: "Schriftgröße",
+                color: "Schriftfarbe",
+                background: "Hintergrundfarbe",
                 insert: "Einfügen",
-                arrange: "Anpassung",
+                arrange: "Anordnen",
                 nodeop: "aktuell",
                 priority: "Priorität",
                 progress: "Fortschritt",
                 resource: "Ressourcen",
-                note: "Bemerkungen",
-                attachment: "Anlage",
+                note: "Notizen",
+                attachment: "Anhang",
                 word: "Text"
             },
             ui: {
                 command: {
                     appendsiblingnode: "Neuer Geschwisterknoten",
-                    appendparentnode: "Neuen Überknoten unterhalb",
+                    appendparentnode: "Neuer Überknoten unterhalb",
                     appendchildnode: "Neuer Unterknoten",
-                    removenode: "Löschen",
-                    editnode: "Bearbeiten",
-                    arrangeup: "Hoch",
-                    arrangedown: "Runter",
-                    resetlayout: "Layout organisieren",
+                    removenode: "Knoten löschen",
+                    editnode: "Knoten bearbeiten",
+                    arrangeup: "nach oben verschieben",
+                    arrangedown: "nach unten verschieben",
+                    resetlayout: "Layout zurücksetzen",
                     expandtoleaf: "Alle Knoten ausklappen",
-                    expandtolevel1: "Ausklappen bis auf Level 1 Knoten",
-                    expandtolevel2: "Ausklappen bis zu sekundären Knoten",
-                    expandtolevel3: "Ausklappen bis zu Knoten der dritten Ebene",
-                    expandtolevel4: "Ausklappen bis zu vierstufigen Knoten",
-                    expandtolevel5: "Ausklappen bis zu fünfstufigen Knoten",
-                    expandtolevel6: "Ausklappen bis zu sechsstufigen Knoten",
+                    expandtolevel1: "Ausklappen bis Knoten der 1. Ebene",
+                    expandtolevel2: "Ausklappen bis zu Knoten der 2. Ebene",
+                    expandtolevel3: "Ausklappen bis zu Knoten der 3. Ebene",
+                    expandtolevel4: "Ausklappen bis zu Knoten der 4. Ebene",
+                    expandtolevel5: "Ausklappen bis zu Knoten der 5. Ebene",
+                    expandtolevel6: "Ausklappen bis zu Knoten der 6. Ebene",
                     fullscreen: "Vollbild",
                     outline: "Gliederung"
                 },
-                search: "suchen",
+                search: "Suchen",
                 expandtoleaf: "Erweitern",
                 back: "Zurück",
-                undo: "Rückgängig (Strg + Z)",
-                redo: "Wiederholen (Strg + Y)",
+                undo: "Rückgängig",
+                redo: "Wiederholen",
                 tabs: {
                     idea: "Idee",
-                    appearence: "Aussehen",
+                    appearence: "Darstellung",
                     view: "Ansicht"
                 },
                 bold: "Fett",
@@ -2176,28 +2177,28 @@ _p[25] = {
                 forecolor: "Schriftfarbe",
                 fontfamily: "Schriftart",
                 fontsize: "Schriftgröße",
-                layoutstyle: "Thema",
+                layoutstyle: "Darstellung",
                 node: "Knotenoperation",
-                hand: "Ziehen erlauben",
+                hand: "Verschieben",
                 camera: "Stammknoten zentrieren",
-                "zoom-in": "Vergrößern (Strg +)",
-                "zoom-out": "Verkleinern (Strg)",
+                "zoom-in": "Vergrößern",
+                "zoom-out": "Verkleinern",
                 markers: "Markierungen",
                 help: "Hilfe",
                 preference: "Einstellungen",
                 expandnode: "Auf das Blatt erweitern",
                 collapsenode: "einen Level-1-Knoten erhalten",
                 template: "Vorlage",
-                theme: "Haut",
-                clearstyle: "Stil entfernen",
-                copystyle: "Stil kopieren",
-                pastestyle: "Stil einfügen",
-                appendsiblingnode: "Gleiches Thema",
-                appendchildnode: "Untergeordnetes Thema",
+                theme: "Darstellung",
+                clearstyle: "Formatierung löschen",
+                copystyle: "Formatierung kopieren",
+                pastestyle: "Formatierung übertragen",
+                appendsiblingnode: "Geschwisterknoten einfügen",
+                appendchildnode: "Kindknoten einfügen",
                 arrangeup: "Voreinstellung",
                 arrangedown: "Nachstimmen",
                 editnode: "Bearbeiten",
-                removenode: "Entfernen",
+                removenode: "Löschen",
                 priority: "Priorität",
                 progress: {
                     p1: "Nicht begonnen",
@@ -2220,89 +2221,89 @@ _p[25] = {
                 insertlink: "Link einfügen",
                 insertimage: "Bild einfügen",
                 insertnote: "Notiz einfügen",
-                removelink: "Bestehende Links entfernen",
-                removeimage: "Bestehendes Bild entfernen",
-                removenote: "Bestehende Notizen entfernen",
+                removelink: "Link löschen",
+                removeimage: "Bild löschen",
+                removenote: "Notiz löschen",
                 resetlayout: "Organisieren",
                 navigator: "Navigator",
                 selectall: "Alles auswählen",
                 selectrevert: "Auswahl umkehren",
                 selectsiblings: "Geschwisterknoten auswählen",
-                selectlevel: "Alle Knoten derselben Eben",
+                selectlevel: "Alle Knoten derselben Ebene auswählen",
                 selectpath: "Pfad auswählen",
                 selecttree: "Teilbaum auswählen",
                 noteeditor: {
-                    title: "Note",
-                    hint: "Support GFM grammar",
-                    placeholder: "Please select a node to edit note"
+                    title: "Notiz",
+                    hint: "Formatierungshilfe (chinesisch)",
+                    placeholder: "Notiz zum Bearbeiten auswählen"
                 },
                 dialog: {
                     image: {
-                        title: "Image",
-                        imagesearch: "Image search",
-                        keyword: "Keyword：",
-                        placeholder: "Please input the keyword for search",
-                        baidu: "Search",
-                        linkimage: "Linked Image",
+                        title: "Bild",
+                        imagesearch: "Bild suchen",
+                        keyword: "Schlagwort：",
+                        placeholder: "Bitte Schlagwort für Suche eingeben",
+                        baidu: "Suchen",
+                        linkimage: "Link auf Bild",
                         linkurl: "URL：",
-                        placeholder2: "Must：start with http(s)://",
-                        imagehint: "Hint：",
-                        placeholder3: "Optional：The text that the mouse prompts when hovering over the image",
-                        preview: "Image preview：",
-                        uploadimage: "Upload Image",
-                        selectfile: "Select file...",
+                        placeholder2: "Muss mit http(s):// beginnen",
+                        imagehint: "Hinweis：",
+                        placeholder3: "Optional：Text für den Tooltip, wenn die Maus sich über dem Bild befindet",
+                        preview: "Bildvorschau：",
+                        uploadimage: "Bild hochladen",
+                        selectfile: "Datei auswählen",
                         ok: "OK",
-                        cancel: "Cancel",
-                        formatinfo: "file ext must be jpg、gif or png"
+                        cancel: "Abbrechen",
+                        formatinfo: "Bild im Format jpg, gif oder png"
                     },
                     hyperlink: {
                         title: "Link",
-                        linkurl: "Link url：",
-                        linkhint: "Hint：",
-                        placeholder: "Require：start with http(s):// or ftp://",
-                        placeholder2: "OPtional: The text that the mouse prompts when hovering over the link",
+                        linkurl: "URL：",
+                        linkhint: "Hinweis：",
+                        placeholder: "Muss mit http(s):// oderftp:// beginnen",
+                        placeholder2: "Optional: Text für den Tooltip, wenn die Maus sich über dem Link befindet",
                         ok: "OK",
-                        cancel: "Cancel"
+                        cancel: "Abbrechen"
                     },
                     exportnode: {
-                        title: "Export Node",
+                        title: "Knoten exportieren",
                         ok: "OK",
-                        cancel: "Cancel"
+                        cancel: "Abbrechen"
                     }
                 }
             },
             runtime: {
                 minder: {
-                    maintopic: "Main Topic"
+                    maintopic: "Hauptthema"
                 },
                 node: {
                     arrangeup: "Arrange Up",
-                    appendchildnode: "Append Child Node",
-                    appendsiblingnode: "Append Sibling Node",
+                    appendchildnode: "Neuer Unterknoten",
+                    appendsiblingnode: "Neuer Geschwisterknoten",
                     arrangedown: "Arrange Down",
-                    removenode: "Delete",
+                    removenode: "Knoten löschen",
                     appendparentnode: "Append Parent Node",
-                    selectall: "Select All",
-                    topic: "Topic",
-                    importnode: "Import Node",
-                    exportnode: "Export Node"
+                    selectall: "Alles auswählen",
+                    topic: "Thema",
+                    importnode: "Knoten importieren",
+                    exportnode: "Knoten exportieren"
                 },
                 input: {
-                    edit: "Edit"
+                    edit: "Bearbeiten"
                 },
                 priority: {
-                    main: "Priority",
-                    remove: "Delete",
-                    esc: "Esc"
+                    main: "Priorität",
+                    remove: "Löschen",
+                    esc: "Abbrechen"
                 },
                 progress: {
-                    main: "Progress",
-                    remove: "Delete",
-                    esc: "Esc"
+                    main: "Fortschritt",
+                    remove: "Löschen",
+                    esc: "Abbrechen"
                 },
                 history: {
-                    undo: "Undo",
-                    redo: "Redo"
+                    undo: "Rückgängig",
+                    redo: "Wiederholen"
                 }
             }
         };
@@ -2532,8 +2533,236 @@ _p[26] = {
     }
 };
 
-//l10n/zh_CN.js
+//l10n/fr.js
 _p[27] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "Mindmap",
+                tianpan: "Nébuleuse",
+                structure: "Organigramme",
+                filetree: "Organigramme annuaire",
+                right: "Diagramme logique",
+                "fish-bone": "Squelette"
+            },
+            theme: {
+                classic: "Classique",
+                "classic-compact": "Classique compact",
+                snow: "Sombre",
+                "snow-compact": "Sombre compact",
+                fish: "Squelette",
+                wire: "Fil de fer",
+                "fresh-red": "Rouge",
+                "fresh-soil": "Marron",
+                "fresh-green": "Vert",
+                "fresh-blue": "Bleu",
+                "fresh-purple": "Violet",
+                "fresh-pink": "Rose",
+                "fresh-red-compat": "Rouge compact",
+                "fresh-soil-compat": "Marron compact",
+                "fresh-green-compat": "Vert compact",
+                "fresh-blue-compat": "Bleu compact",
+                "fresh-purple-compat": "Violet compact",
+                "fresh-pink-compat": "Rose compact",
+                tianpan: "Cadran",
+                "tianpan-compact": "Cadran compact"
+            },
+            maintopic: "Sujet principal",
+            topic: "branche",
+            panels: {
+                history: "historique",
+                template: "modele",
+                theme: "theme",
+                layout: "disposition",
+                style: "style",
+                font: "texte",
+                color: "couleur",
+                background: "",
+                insert: "insérer",
+                arrange: "ajuster",
+                nodeop: "actuel",
+                priority: "priorité",
+                progress: "progression",
+                resource: "ressource",
+                note: "note",
+                attachment: "fichier joint",
+                word: "texte"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "Insérer noeud voisin",
+                    appendparentnode: "Insérer noeud parent",
+                    appendchildnode: "Insérer noeud enfant",
+                    removenode: "Supprimer",
+                    editnode: "Editer",
+                    arrangeup: "Monter",
+                    arrangedown: "Descendre",
+                    resetlayout: "Re-organise",
+                    expandtoleaf: "Déplier tous les noeuds",
+                    expandtolevel1: "Déplier au niveau 1",
+                    expandtolevel2: "Déplier au niveau 2",
+                    expandtolevel3: "Déplier au niveau 3",
+                    expandtolevel4: "Déplier au niveau 4",
+                    expandtolevel5: "Déplier au niveau 5",
+                    expandtolevel6: "Déplier au niveau 6",
+                    fullscreen: "Plein écran",
+                    outline: "contour"
+                },
+                search: "Recherche",
+                expandtoleaf: "Déplier",
+                back: "retour",
+                undo: "Annuler (Ctrl + Z)",
+                redo: "Rétablir (Ctrl + Y)",
+                tabs: {
+                    idea: "Edition",
+                    appearence: "Style",
+                    view: "Affichage"
+                },
+                bold: "Gras",
+                italic: "Italic",
+                forecolor: "Couleur",
+                fontfamily: "Police",
+                fontsize: "Taille",
+                layoutstyle: "Theme",
+                node: "Node operation",
+                hand: "Activer le glisser",
+                camera: "Centrer sur le noeud principal",
+                "zoom-in": "Agrandir (Ctrl+)",
+                "zoom-out": "Dezoomer (Ctrl-)",
+                markers: "tag",
+                help: "Aide",
+                preference: "Préférences",
+                expandnode: "Déplier le noeud",
+                collapsenode: "Fermer le noeud",
+                template: "modèle",
+                theme: "style",
+                clearstyle: "Effacer le style",
+                copystyle: "Copier le style",
+                pastestyle: "Coller le style",
+                appendsiblingnode: "Même theme",
+                appendchildnode: "theme enfant",
+                arrangeup: "Monter",
+                arrangedown: "Descendre",
+                editnode: "Editer",
+                removenode: "Supprimer",
+                "no priority": "Pas de priorité",
+                priority: "Priorité",
+                progress: {
+                    p1: "Non démarré",
+                    p2: "Completé à 1/8",
+                    p3: "Completé à 1/4",
+                    p4: "Completé à 3/8",
+                    p5: "Completé à moité",
+                    p6: "Completé à 5/8",
+                    p7: "Completé à 3/4",
+                    p8: "Completé à 7/8",
+                    p9: "Terminé",
+                    p0: "Supprimer la progression"
+                },
+                resource: {
+                    add: "Ajouter"
+                },
+                link: "Lien",
+                image: "Image",
+                note: "Note",
+                insertlink: "Inserer un lien",
+                insertimage: "Inserer une image",
+                insertnote: "Inserer une note",
+                removelink: "Supprimer un lien existant",
+                removeimage: "Supprimer une image existante",
+                removenote: "Supprimer une note existante",
+                resetlayout: "Re-organise",
+                navigator: "Navigateur",
+                selectall: "Selectionner tout",
+                selectrevert: "Inverser la selection",
+                selectsiblings: "Sélectionner les voisins",
+                selectlevel: "Sélectionner le niveau",
+                selectpath: "Sélectionner le chemin",
+                selecttree: "Sélectionner la sous-arborescence",
+                noteeditor: {
+                    title: "Note",
+                    hint: "Supporte la syntax GFM",
+                    placeholder: "Merci de sélectionner une note"
+                },
+                dialog: {
+                    image: {
+                        title: "Image",
+                        imagesearch: "Recherche d'image",
+                        keyword: "Mot clé：",
+                        placeholder: "Mot(s) clé(s) de recherche",
+                        baidu: "Recherche",
+                        linkimage: "Lien vers l'image",
+                        linkurl: "Adresse：",
+                        placeholder2: "Requis：Commence par http(s)://",
+                        imagehint: "Astuce：",
+                        placeholder3: "Optionnel：Texte au survol de l'image",
+                        preview: "Apercus de l'image：",
+                        uploadimage: "Charger une image",
+                        selectfile: "Ouvrir un fichier...",
+                        ok: "OK",
+                        cancel: "Annuler",
+                        formatinfo: "Le fichier doit être jpg, gif ou png"
+                    },
+                    hyperlink: {
+                        title: "Lien",
+                        linkurl: "Adresse：",
+                        linkhint: "Astuce：",
+                        placeholder: "Requis：Commence par http(s):// ou ftp://",
+                        placeholder2: "Optionnel: Texte au survol du lien",
+                        ok: "OK",
+                        cancel: "Annuler"
+                    },
+                    exportnode: {
+                        title: "Exporter le Noeud",
+                        ok: "OK",
+                        cancel: "Annuler"
+                    },
+                    search: {
+                        result: "Résultat",
+                        on: "sur"
+                    }
+                }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "Sujet Principal"
+                },
+                node: {
+                    arrangeup: "Monter",
+                    appendchildnode: "Enfant",
+                    appendsiblingnode: "Voisin",
+                    arrangedown: "Desc.",
+                    removenode: "Suppr.",
+                    appendparentnode: "Parent",
+                    selectall: "Tout sélectionner",
+                    topic: "Sujet",
+                    importnode: "Importer un noeud",
+                    exportnode: "Exporter un noeud"
+                },
+                input: {
+                    edit: "Edition"
+                },
+                priority: {
+                    main: "Priorité",
+                    remove: "Supprimer",
+                    esc: "Retour"
+                },
+                progress: {
+                    main: "Progression",
+                    remove: "Supprimer",
+                    esc: "Retour"
+                },
+                history: {
+                    undo: "Annuler",
+                    redo: "Rétablir"
+                }
+            }
+        };
+    }
+};
+
+//l10n/zh_CN.js
+_p[28] = {
     value: function(require, exports, module) {
         return module.exports = {
             template: {
@@ -2881,7 +3110,7 @@ angular.module('kityminderEditor').run(['$templateCache', function($templateCach
 
 
   $templateCache.put('ui/directive/searchBox/searchBox.html',
-    "<div id=\"search\" class=\"search-box clearfix\" ng-show=\"showSearch\"><div class=\"input-group input-group-sm search-input-wrap\"><input type=\"text\" id=\"search-input\" class=\"form-control search-input\" ng-model=\"keyword\" ng-keydown=\"handleKeyDown($event)\" aria-describedby=\"basic-addon2\"> <span class=\"input-group-addon search-addon\" id=\"basic-addon2\" ng-show=\"showTip\" ng-bind=\"'第 ' + curIndex + ' 条，共 ' + resultNum + ' 条'\"></span></div><div class=\"btn-group btn-group-sm prev-and-next-btn\" role=\"group\"><button type=\"button\" class=\"btn btn-default\" ng-click=\"doSearch(keyword, 'prev')\"><span class=\"glyphicon glyphicon-chevron-up\"></span></button> <button type=\"button\" class=\"btn btn-default\" ng-click=\"doSearch(keyword, 'next')\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></div><div class=\"close-search\" ng-click=\"exitSearch()\"><span class=\"glyphicon glyphicon-remove\"></span></div></div>"
+    "<div id=\"search\" class=\"search-box clearfix\" ng-show=\"showSearch\"><div class=\"input-group input-group-sm search-input-wrap\"><input type=\"text\" id=\"search-input\" class=\"form-control search-input\" ng-model=\"keyword\" ng-keydown=\"handleKeyDown($event)\" aria-describedby=\"basic-addon2\"> <span class=\"input-group-addon search-addon\" id=\"basic-addon2\" ng-show=\"showTip\" ng-bind=\"'{{ 'result' | lang:'ui/dialog/search' }}' + ' ' + curIndex + ' ' + '{{ 'on' | lang:'ui/dialog/search' }}' + ' ' +resultNum \"></span></div><div class=\"btn-group btn-group-sm prev-and-next-btn\" role=\"group\"><button type=\"button\" class=\"btn btn-default\" ng-click=\"doSearch(keyword, 'prev')\"><span class=\"glyphicon glyphicon-chevron-up\"></span></button> <button type=\"button\" class=\"btn btn-default\" ng-click=\"doSearch(keyword, 'next')\"><span class=\"glyphicon glyphicon-chevron-down\"></span></button></div><div class=\"close-search\" ng-click=\"exitSearch()\"><span class=\"glyphicon glyphicon-remove\"></span></div></div>"
   );
 
 
@@ -3525,11 +3754,12 @@ angular.module('kityminderEditor')
             replace: true,
             link: function($scope) {
                 var minder = $scope.minder;
+		var lang = editor.lang.t;
 
                 commandBinder.bind(minder, 'appendchildnode', $scope)
 
                 $scope.execCommand = function(command) {
-                    minder.execCommand(command, '分支主题');
+                    minder.execCommand(command, lang("topic","runtime/node"));
                     editText();
                 };
 
@@ -3545,6 +3775,7 @@ angular.module('kityminderEditor')
             }
         }
     }]);
+
 angular.module('kityminderEditor')
     .directive('arrange', ['commandBinder', function(commandBinder) {
         return {
@@ -4331,6 +4562,7 @@ angular.module('kityminderEditor')
             replace: true,
             link: function($scope) {
                 var minder = $scope.minder;
+		var lang = editor.lang.t ;
                 var priorities = [];
 
                 for (var i = 0; i < 10; i++) {
@@ -4343,14 +4575,15 @@ angular.module('kityminderEditor')
 
 	            $scope.getPriorityTitle = function(p) {
 		            switch(p) {
-			            case 0: return '移除优先级';
-			            default: return '优先级' + p;
+			            case 0: return lang("no priority","ui") ;
+			            default: return lang("priority","ui") +" "+p;
 		            }
 	            }
             }
 
         }
     }]);
+
 angular.module('kityminderEditor')
 	.directive('progressEditor', ['commandBinder', function(commandBinder) {
 		return {
@@ -4362,6 +4595,7 @@ angular.module('kityminderEditor')
             replace: true,
 			link: function($scope) {
 				var minder = $scope.minder;
+				var lang = editor.lang.t ;
 				var progresses = [];
 
 				for (var i = 0; i < 10; i++) {
@@ -4373,17 +4607,19 @@ angular.module('kityminderEditor')
 				$scope.progresses = progresses;
 
 				$scope.getProgressTitle = function(p) {
-					switch(p) {
-						case 0: return '移除进度';
-						case 1: return '未开始';
-						case 9: return '全部完成';
-						default: return '完成' + (p - 1) + '/8';
+					return lang('p'+p,'ui/progress') ;
+					//switch(p) {
+					//	case 0: return lang('p1','ui/progress');
+					//	case 1: return '未开始';
+					//	case 9: return lang('p9','ui/progress');
+					//	default: return '完成' + (p - 1) + '/8';
 
-					}
+					//}
 				}
 			}
 		}
 	}])
+
 angular.module('kityminderEditor')
     .directive('resourceEditor', function () {
         return {
