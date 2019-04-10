@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * kityminder-editor - v1.0.64 - 2019-04-08
+ * kityminder-editor - v1.0.64 - 2019-04-10
  * https://github.com/fex-team/kityminder-editor
  * GitHub: https://github.com/fex-team/kityminder-editor 
  * Copyright (c) 2019 ; Licensed 
@@ -2147,10 +2147,10 @@ _p[25] = {
                     appendsiblingnode: "Neuer Geschwisterknoten",
                     appendparentnode: "Neuer Überknoten unterhalb",
                     appendchildnode: "Neuer Unterknoten",
-                    removenode: "Knoten löschen",
-                    editnode: "Knoten bearbeiten",
-                    arrangeup: "nach oben verschieben",
-                    arrangedown: "nach unten verschieben",
+                    removenode: "Löschen",
+                    editnode: "Bearbeiten",
+                    arrangeup: "nach oben",
+                    arrangedown: "nach unten",
                     resetlayout: "Layout zurücksetzen",
                     expandtoleaf: "Alle Knoten ausklappen",
                     expandtolevel1: "Ausklappen bis Knoten der 1. Ebene",
