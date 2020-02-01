@@ -110,7 +110,7 @@ define(function(require, exports, module) {
             'removenode': 'Rimuovi',
             'priority': 'Priorità',
             'progress': {
-                'p1': 'Non iniziato,
+                'p1': 'Non iniziato',
                 'p2': 'Completo 1/8',
                 'p3': 'Completo 1/4',
                 'p4': 'Completo 3/8',

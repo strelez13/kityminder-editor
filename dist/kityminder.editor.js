@@ -1,9 +1,9 @@
 /*!
  * ====================================================
- * kityminder-editor - v1.0.64 - 2019-04-10
+ * kityminder-editor - v1.0.64 - 2020-02-01
  * https://github.com/fex-team/kityminder-editor
  * GitHub: https://github.com/fex-team/kityminder-editor 
- * Copyright (c) 2019 ; Licensed 
+ * Copyright (c) 2020 ; Licensed 
  * ====================================================
  */
 
@@ -106,9 +106,11 @@ _p[3] = {
         var langList = {
             en: _p.r(26),
             de: _p.r(25),
-            fr: _p.r(27),
-            zh_CN: _p.r(28),
-            zh_TW: _p.r(29)
+            es: _p.r(27),
+            fr: _p.r(28),
+            it: _p.r(29),
+            zh_CN: _p.r(30),
+            zh_TW: _p.r(31)
         };
         var defaultLang = "en";
         function lang(text, block, lang) {
@@ -2534,8 +2536,233 @@ _p[26] = {
     }
 };
 
-//l10n/fr.js
+//l10n/es.js
 _p[27] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "Mapa mental",
+                tianpan: "Sky map",
+                structure: "Organigrama",
+                filetree: "Organigrama de directorios",
+                right: "diagrama de estructura lógica",
+                "fish-bone": "Diagrama de espina de pescado"
+            },
+            theme: {
+                classic: "Clásico",
+                "classic-compact": "Clásico compacto",
+                snow: "Luz fría suave",
+                "snow-compact": "Luz fría compacta",
+                fish: "Fish bone map",
+                wire: "Wireframe",
+                "fresh-red": "Pez rojo",
+                "fresh-soil": "Amarillo sucio",
+                "fresh-green": "Verde artistico",
+                "fresh-blue": "Cielo Azul",
+                "fresh-purple": "Morado romantico",
+                "fresh-pink": "Polvo mental",
+                "fresh-red-compat": "Rojo compacto",
+                "fresh-soil-compat": "Amarillo compacto",
+                "fresh-green-compat": "Verde compacto",
+                "fresh-blue-compat": "Azul compacto",
+                "fresh-purple-compat": "Morado compacto",
+                "fresh-pink-compat": "Polvo compacto",
+                tianpan: "Dial clasico",
+                "tianpan-compact": "Dia compacto"
+            },
+            maintopic: "Tema central",
+            topic: "tema de la rama",
+            panels: {
+                history: "historial",
+                template: "plantilla",
+                theme: "tema",
+                layout: "diseño",
+                style: "estilo",
+                font: "texto",
+                color: "color",
+                background: "fondo",
+                insert: "insertar",
+                arrange: "adjustar",
+                nodeop: "actual",
+                priority: "prioridad",
+                progress: "progreso",
+                resource: "recurso",
+                note: "nota",
+                attachment: "adjunto",
+                word: "texto"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "Insertar nodo hermano",
+                    appendparentnode: "Insertar nodo padre",
+                    appendchildnode: "Insertar nodo hijo",
+                    removenode: "Eliminar",
+                    editnode: "Editar",
+                    arrangeup: "Arriba",
+                    arrangedown: "Abajo",
+                    resetlayout: "Restablecer diseño",
+                    expandtoleaf: "Expandir todos los nodos",
+                    expandtolevel1: "Expandir al nivel 1",
+                    expandtolevel2: "Expandir al nivel 2",
+                    expandtolevel3: "Expandir al nivel 3",
+                    expandtolevel4: "Expandir al nivel 4",
+                    expandtolevel5: "Expandir al nivel 5",
+                    expandtolevel6: "Expandir al nivel 6",
+                    fullscreen: "pantalla completa",
+                    outline: "contorno"
+                },
+                search: "Buscar",
+                expandtoleaf: "Expandir",
+                back: "atras",
+                undo: "Deshacer (Ctrl + Z)",
+                redo: "Rehacer (Ctrl + Y)",
+                tabs: {
+                    idea: "Idea",
+                    appearence: "Apariencia",
+                    view: "Vista"
+                },
+                bold: "Negrita",
+                italic: "Itálicav",
+                forecolor: "Color de fuente",
+                fontfamily: "Fuente",
+                fontsize: "Tamaño",
+                layoutstyle: "Tema",
+                node: "Operación de nodo",
+                hand: "Permitir arrastrar",
+                camera: "Localizar el nodo raíz",
+                "zoom-in": "Acercar (Ctrl+)",
+                "zoom-out": "Alejar (Ctrl-)",
+                markers: "tag",
+                help: "Ayuda",
+                preference: "Preferencias",
+                expandnode: "Expandir hoja",
+                collapsenode: "recibir un nodo de nivel uno",
+                template: "plantilla",
+                theme: "tema",
+                clearstyle: "Limpiar estilo",
+                copystyle: "Copiar estilo",
+                pastestyle: "Pegar estilo",
+                appendsiblingnode: "mismo tema",
+                appendchildnode: "tema subordinado",
+                arrangeup: "pre-tune",
+                // TODO: Get more info about this to translate it properly
+                arrangedown: "post-tune",
+                // TODO: Get more info about this to translate it properly
+                editnode: "Editar",
+                removenode: "remover",
+                priority: "Prioridad",
+                progress: {
+                    p1: "no iniciado",
+                    p2: "Completado 1/8",
+                    p3: "Completado 1/4",
+                    p4: "Completado 3/8",
+                    p5: "Completado a la mitad",
+                    p6: "Completado 5/8",
+                    p7: "Completado 3/4",
+                    p8: "Completado 7/8",
+                    p9: "Completado",
+                    p0: "Limpiar progreso"
+                },
+                resource: {
+                    add: "Agregar"
+                },
+                link: "Enlace",
+                image: "Imagen",
+                note: "Nota",
+                insertlink: "Insertar enlace",
+                insertimage: "Insertar imagen",
+                insertnote: "Insertar nota",
+                removelink: "Quitar enlaces existentes",
+                removeimage: "Quitar imagen existente",
+                removenote: "Quitar notas existentes",
+                resetlayout: "Organizar",
+                navigator: "Navegador",
+                selectall: "Seleccionar todo",
+                selectrevert: "Seleccionar revertir",
+                selectsiblings: "Seleccionar hermanos",
+                selectlevel: "Seleccionar nivel",
+                selectpath: "Seleccionar ruta",
+                selecttree: "Seleccionar subárbol",
+                noteeditor: {
+                    title: "Nota",
+                    hint: "Support GFM grammar",
+                    placeholder: "Por favor, seleccione un nodo para editar la nota"
+                },
+                dialog: {
+                    image: {
+                        title: "Imagen",
+                        imagesearch: "Búsqueda de imágenes",
+                        keyword: "Palabra clave:",
+                        placeholder: "Por favor ingrese la palabra clave para la búsqueda",
+                        baidu: "Buscar",
+                        linkimage: "Imagen vinculada",
+                        linkurl: "URL：",
+                        placeholder2: "Requerido: Iniciar con http(s)://",
+                        imagehint: "Indicio:",
+                        placeholder3: "Opcional: El texto que se muestra al pasar el cursor sobre la imagen.",
+                        preview: "Vista previa de la imagen：",
+                        uploadimage: "Cargar imagen",
+                        selectfile: "Seleccionar archivo...",
+                        ok: "OK",
+                        cancel: "Cancelar",
+                        formatinfo: "La extensión del archivo debe ser jpg, gif o png"
+                    },
+                    hyperlink: {
+                        title: "Enlace",
+                        linkurl: "Link url：",
+                        linkhint: "Indicio:",
+                        placeholder: "Requerido: Iniciar con http(s):// o ftp://",
+                        placeholder2: "Opcional: El texto que se muestra al pasar el cursor sobre el enlace.",
+                        ok: "OK",
+                        cancel: "Cancelar"
+                    },
+                    exportnode: {
+                        title: "Exportar Nodo",
+                        ok: "OK",
+                        cancel: "Cancelar"
+                    }
+                }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "Tema principal"
+                },
+                node: {
+                    arrangeup: "Organizar",
+                    appendchildnode: "Anexar nodo hijo",
+                    appendsiblingnode: "Anexar nodo hermano",
+                    arrangedown: "Organizar abajo",
+                    removenode: "Borrar",
+                    appendparentnode: "Anexar Nodo Padre",
+                    selectall: "Seleccionar Todo",
+                    topic: "Tema",
+                    importnode: "Importar Nodo",
+                    exportnode: "Exportar Nodo"
+                },
+                input: {
+                    edit: "Editar"
+                },
+                priority: {
+                    main: "Prioridad",
+                    remove: "Borrar",
+                    esc: "Esc"
+                },
+                progress: {
+                    main: "Progreso",
+                    remove: "Borrar",
+                    esc: "Esc"
+                },
+                history: {
+                    undo: "Deshacer",
+                    redo: "Rehacer"
+                }
+            }
+        };
+    }
+};
+
+//l10n/fr.js
+_p[28] = {
     value: function(require, exports, module) {
         return module.exports = {
             template: {
@@ -2762,8 +2989,231 @@ _p[27] = {
     }
 };
 
+//l10n/it.js
+_p[29] = {
+    value: function(require, exports, module) {
+        return module.exports = {
+            template: {
+                default: "Mappa classica",
+                tianpan: "Mappa a cielo",
+                structure: "Diagramma organizzativo",
+                filetree: "Diagramma organizzativo strutturato",
+                right: "Diagramma strutture logiche",
+                "fish-bone": "Mappa a lisca di pesce"
+            },
+            theme: {
+                classic: "Classico",
+                "classic-compact": "Classico compatto",
+                snow: "Neve",
+                "snow-compact": "Neve Compatto",
+                fish: "Mappa a lisca di pesce",
+                wire: "Wireframe",
+                "fresh-red": "Fresco rosso",
+                "fresh-soil": "Giallo sporco",
+                "fresh-green": "Verde artistico",
+                "fresh-blue": "Cielo Blu",
+                "fresh-purple": "Viola romantico",
+                "fresh-pink": "Polvere della mente",
+                "fresh-red-compat": "Rosso compatto",
+                "fresh-soil-compat": "Giallo compatto",
+                "fresh-green-compat": "Verde compatto",
+                "fresh-blue-compat": "Blu compatto",
+                "fresh-purple-compat": "Viola compatto",
+                "fresh-pink-compat": "Rosa compatto",
+                tianpan: "Chiamata classico",
+                "tianpan-compact": "Chiamata compatto"
+            },
+            maintopic: "Tema centrale",
+            topic: "Tema",
+            panels: {
+                history: "storia",
+                template: "modello",
+                theme: "skin",
+                layout: "disposizione",
+                style: "stile",
+                font: "font",
+                color: "colore",
+                background: "sfondo",
+                insert: "inserisci",
+                arrange: "aggiusta",
+                nodeop: "attuale",
+                priority: "priorità",
+                progress: "avanzamento",
+                resource: "risorse",
+                note: "note",
+                attachment: "allegati",
+                word: "testo"
+            },
+            ui: {
+                command: {
+                    appendsiblingnode: "Inserisci nodo fratello",
+                    appendparentnode: "Inserisci nodo padre",
+                    appendchildnode: "Inserisci nodo figlio",
+                    removenode: "Cancella nodo",
+                    editnode: "Modifica nodo",
+                    arrangeup: "Su",
+                    arrangedown: "Giù",
+                    resetlayout: "Ripristina disposizione",
+                    expandtoleaf: "Mostra tutti i nodi",
+                    expandtolevel1: "Mostra fino al livello 1",
+                    expandtolevel2: "Mostra fino al livello 2",
+                    expandtolevel3: "Mostra fino al livello 3",
+                    expandtolevel4: "Mostra fino al livello 4",
+                    expandtolevel5: "Mostra fino al livello 5",
+                    expandtolevel6: "Mostra fino al livello 6",
+                    fullscreen: "Schermo intero",
+                    outline: "Contorno"
+                },
+                search: "Cerca",
+                expandtoleaf: "Mostra",
+                back: "ritorno",
+                undo: "Annulla (Ctrl + Z)",
+                redo: "Ripristina (Ctrl + Y)",
+                tabs: {
+                    idea: "Idea",
+                    appearence: "Apparenza",
+                    view: "Vista"
+                },
+                bold: "Grassetto",
+                italic: "Corsivo",
+                forecolor: "Colore font",
+                fontfamily: "Font",
+                fontsize: "Grandezza",
+                layoutstyle: "Skin",
+                node: "Operazioni nodo",
+                hand: "Consenti trascinamento",
+                camera: "Individua il nodo principale",
+                "zoom-in": "Zoom in (Ctrl+)",
+                "zoom-out": "Zoom out (Ctrl-)",
+                markers: "tag",
+                help: "Aiuto",
+                preference: "Impostazioni",
+                expandnode: "Mostra fino alla radice",
+                collapsenode: "Raggruppa nodi",
+                template: "modello",
+                theme: "skin",
+                clearstyle: "Cancella stile",
+                copystyle: "Copia stile",
+                pastestyle: "Incolla stile",
+                appendsiblingnode: "Stessa skin",
+                appendchildnode: "Skin subordinata",
+                arrangeup: "preponi",
+                arrangedown: "postponi",
+                editnode: "Modifica",
+                removenode: "Rimuovi",
+                priority: "Priorità",
+                progress: {
+                    p1: "Non iniziato",
+                    p2: "Completo 1/8",
+                    p3: "Completo 1/4",
+                    p4: "Completo 3/8",
+                    p5: "Completo a metà",
+                    p6: "Completo 5/8",
+                    p7: "Completo 3/4",
+                    p8: "Completo 7/8",
+                    p9: "Completato",
+                    p0: "Anulla avanzamento"
+                },
+                resource: {
+                    add: "Aggiungi"
+                },
+                link: "Collegamento",
+                image: "Immagine",
+                note: "Nota",
+                insertlink: "Inserisci collegamento",
+                insertimage: "Inserisci immagine",
+                insertnote: "Insert note",
+                removelink: "Rimuovi collegamenti esistenti",
+                removeimage: "Rimuovi immagini esistenti",
+                removenote: "Rimuovi note esterne",
+                resetlayout: "Organizza",
+                navigator: "Navigatore",
+                selectall: "Seleziona tutto",
+                selectrevert: "Annulla selezione",
+                selectsiblings: "Seleziona fratello",
+                selectlevel: "Seleziona livello",
+                selectpath: "Seleziona percorso",
+                selecttree: "Seleziona sotto albero",
+                noteeditor: {
+                    title: "Nota",
+                    hint: "Supporta GFM grammar",
+                    placeholder: "Seleziona un nodo per modificare la nota"
+                },
+                dialog: {
+                    image: {
+                        title: "Immagine",
+                        imagesearch: "Cerca immagini",
+                        keyword: "Parola chiave：",
+                        placeholder: "Inserire una parola per effettuare una ricerca",
+                        baidu: "Cerca",
+                        linkimage: "Immagine collegata",
+                        linkurl: "URL：",
+                        placeholder2: "Richiesta：deve iniziare con http(s)://",
+                        imagehint: "Suggerimento：",
+                        placeholder3: "Opzionale: testo mostrato al passaggio del mouse sopra limmagine",
+                        preview: "Anteprima immagine：",
+                        uploadimage: "Carica immagine",
+                        selectfile: "Seleziona file…",
+                        ok: "OK",
+                        cancel: "Cancella",
+                        formatinfo: "la estensione del file deve essere jpg, gif o png"
+                    },
+                    hyperlink: {
+                        title: "Collegamento",
+                        linkurl: "Indirizzo del collegamento：",
+                        linkhint: "Suggerimento：",
+                        placeholder: "Richiesta：deve iniziare con http(s):// or ftp://",
+                        placeholder2: "Opzionale: testo mostrato al passaggio del mouse sopra l'immagine",
+                        ok: "OK",
+                        cancel: "Cancella"
+                    },
+                    exportnode: {
+                        title: "Esporta nodo",
+                        ok: "OK",
+                        cancel: "Cancella"
+                    }
+                }
+            },
+            runtime: {
+                minder: {
+                    maintopic: "Tema principale"
+                },
+                node: {
+                    arrangeup: "Preponi",
+                    appendchildnode: "Accoda il nodo bambino",
+                    appendsiblingnode: "Accoda il nodo fratello",
+                    arrangedown: "posponi",
+                    removenode: "Rimuovi",
+                    appendparentnode: "Accoda al nodo padre",
+                    selectall: "Seleziona tutto",
+                    topic: "Tema",
+                    importnode: "Importa nodo",
+                    exportnode: "Esporta nodo"
+                },
+                input: {
+                    edit: "Modifica"
+                },
+                priority: {
+                    main: "Priorità",
+                    remove: "Cancella",
+                    esc: "Annulla"
+                },
+                progress: {
+                    main: "Progresso",
+                    remove: "Cancella",
+                    esc: "Annulla"
+                },
+                history: {
+                    undo: "Annulla",
+                    redo: "Ripristina"
+                }
+            }
+        };
+    }
+};
+
 //l10n/zh_CN.js
-_p[28] = {
+_p[30] = {
     value: function(require, exports, module) {
         return module.exports = {
             template: {
@@ -2985,231 +3435,228 @@ _p[28] = {
     }
 };
 
-
 //l10n/zh_TW.js
-_p[29] = {
+_p[31] = {
     value: function(require, exports, module) {
         return module.exports = {
-            'template': {
-                'default': '心智圖',
-                'tianpan': '天盤圖',
-                'structure': '組織圖',
-                'filetree': '樹狀圖',
-                'right': '邏輯圖',
-                'fish-bone': '魚骨圖'
+            template: {
+                default: "心智圖",
+                tianpan: "天盤圖",
+                structure: "組織圖",
+                filetree: "樹狀圖",
+                right: "邏輯圖",
+                "fish-bone": "魚骨圖"
             },
-            'theme': {
-                'classic': '經典',
-                'classic-compact': '緊湊經典',
-                'snow': '溫柔冷光',
-                'snow-compact': '緊湊冷光',
-                'fish': '魚骨圖',
-                'wire': '線框',
-                'fresh-red': '清新紅',
-                'fresh-soil': '泥土黃',
-                'fresh-green': '文藝綠',
-                'fresh-blue': '天空藍',
-                'fresh-purple': '浪漫紫',
-                'fresh-pink': '可愛粉',
-                'fresh-red-compat': '緊湊紅',
-                'fresh-soil-compat': '緊湊黃',
-                'fresh-green-compat': '緊湊綠',
-                'fresh-blue-compat': '緊湊藍',
-                'fresh-purple-compat': '緊湊紫',
-                'fresh-pink-compat': '緊湊粉',
-                'tianpan':'天盤',
-                'tianpan-compact': '緊湊天盤'
+            theme: {
+                classic: "經典",
+                "classic-compact": "緊湊經典",
+                snow: "溫柔冷光",
+                "snow-compact": "緊湊冷光",
+                fish: "魚骨圖",
+                wire: "線框",
+                "fresh-red": "清新紅",
+                "fresh-soil": "泥土黃",
+                "fresh-green": "文藝綠",
+                "fresh-blue": "天空藍",
+                "fresh-purple": "浪漫紫",
+                "fresh-pink": "可愛粉",
+                "fresh-red-compat": "緊湊紅",
+                "fresh-soil-compat": "緊湊黃",
+                "fresh-green-compat": "緊湊綠",
+                "fresh-blue-compat": "緊湊藍",
+                "fresh-purple-compat": "緊湊紫",
+                "fresh-pink-compat": "緊湊粉",
+                tianpan: "天盤",
+                "tianpan-compact": "緊湊天盤"
             },
-            'maintopic': '中心主題',
-            'topic': '分支主題',
-            'panels': {
-                'history': '歷史',
-                'template': '範本',
-                'theme': '主題',
-                'layout': '配置',
-                'style': '樣式',
-                'font': '字型',
-                'color': '顏色',
-                'background': '背景',
-                'insert': '插入',
-                'arrange': '排列',
-                'nodeop': '節點作業',
-                'priority': '優先順序',
-                'progress': '進度',
-                'resource': '資源',
-                'note': '備註',
-                'attachment': '附件',
-                'word': '文字'
+            maintopic: "中心主題",
+            topic: "分支主題",
+            panels: {
+                history: "歷史",
+                template: "範本",
+                theme: "主題",
+                layout: "配置",
+                style: "樣式",
+                font: "字型",
+                color: "顏色",
+                background: "背景",
+                insert: "插入",
+                arrange: "排列",
+                nodeop: "節點作業",
+                priority: "優先順序",
+                progress: "進度",
+                resource: "資源",
+                note: "備註",
+                attachment: "附件",
+                word: "文字"
             },
-            'ui': {
-                'command': {
-                    'appendsiblingnode': '插入同層主題',
-                    'appendparentnode': '插入上層主題',
-                    'appendchildnode': '插入下層主題',
-                    'removenode': '刪除',
-                    'editnode': '編輯',
-                    'arrangeup': '上移',
-                    'arrangedown': '下移',
-                    'resetlayout': '重新配置',
-                    'expandtoleaf': '全部展開',
-                    'expandtolevel1': '展開至第一級節點',
-                    'expandtolevel2': '展開至第二級節點',
-                    'expandtolevel3': '展開至第三級節點',
-                    'expandtolevel4': '展開至第四級節點',
-                    'expandtolevel5': '展開至第五級節點',
-                    'expandtolevel6': '展開至第六級節點',
-                    'fullscreen': '全螢幕',
-                    'outline': '大綱'
+            ui: {
+                command: {
+                    appendsiblingnode: "插入同層主題",
+                    appendparentnode: "插入上層主題",
+                    appendchildnode: "插入下層主題",
+                    removenode: "刪除",
+                    editnode: "編輯",
+                    arrangeup: "上移",
+                    arrangedown: "下移",
+                    resetlayout: "重新配置",
+                    expandtoleaf: "全部展開",
+                    expandtolevel1: "展開至第一級節點",
+                    expandtolevel2: "展開至第二級節點",
+                    expandtolevel3: "展開至第三級節點",
+                    expandtolevel4: "展開至第四級節點",
+                    expandtolevel5: "展開至第五級節點",
+                    expandtolevel6: "展開至第六級節點",
+                    fullscreen: "全螢幕",
+                    outline: "大綱"
                 },
-                'search':'搜尋',
-                'expandtoleaf': '展開',
-                'back': '返回',
-                'undo': '復原 (Ctrl + Z)',
-                'redo': '取消復原 (Ctrl + Y)',
-                'tabs': {
-                    'idea': '思考',
-                    'appearence': '外觀',
-                    'view': '檢視'
+                search: "搜尋",
+                expandtoleaf: "展開",
+                back: "返回",
+                undo: "復原 (Ctrl + Z)",
+                redo: "取消復原 (Ctrl + Y)",
+                tabs: {
+                    idea: "思考",
+                    appearence: "外觀",
+                    view: "檢視"
                 },
-                'bold': '粗體',
-                'italic': '斜體',
-                'forecolor': '顏色',
-                'fontfamily': '字型',
-                'fontsize': '大小',
-                'layoutstyle': '配置樣式',
-                'node': '節點操作',
-                'hand': '允許拖曳',
-                'camera': '回到根節點',
-                'zoom-in': '放大（Ctrl+）',
-                'zoom-out': '縮寫（Ctrl-）',
-                'markers': '標記',
-                'help': '說明',
-                'preference': '喜好設定',
-                'expandnode': '展開至末端節點',
-                'collapsenode': '收合至第一級節點',
-                'template': '範本',
-                'theme': '主題',
-                'clearstyle': '清除樣式',
-                'copystyle': '複製樣式',
-                'pastestyle': '貼上樣式',
-                'appendsiblingnode': '同層主题',
-                'appendchildnode': '下層主题',
-                'arrangeup': '上移',
-                'arrangedown': '下移',
-                'editnode': '編輯',
-                'removenode': '移除',
-                'priority': '優先順序',
-                'progress': {
-                    'p1': '未開始',
-                    'p2': '完成 1/8',
-                    'p3': '完成 1/4',
-                    'p4': '完成 3/8',
-                    'p5': '完成一半',
-                    'p6': '完成 5/8',
-                    'p7': '完成 3/4',
-                    'p8': '完成 7/8',
-                    'p9': '已完成',
-                    'p0': '清除進度'
+                bold: "粗體",
+                italic: "斜體",
+                forecolor: "顏色",
+                fontfamily: "字型",
+                fontsize: "大小",
+                layoutstyle: "配置樣式",
+                node: "節點操作",
+                hand: "允許拖曳",
+                camera: "回到根節點",
+                "zoom-in": "放大（Ctrl+）",
+                "zoom-out": "縮寫（Ctrl-）",
+                markers: "標記",
+                help: "說明",
+                preference: "喜好設定",
+                expandnode: "展開至末端節點",
+                collapsenode: "收合至第一級節點",
+                template: "範本",
+                theme: "主題",
+                clearstyle: "清除樣式",
+                copystyle: "複製樣式",
+                pastestyle: "貼上樣式",
+                appendsiblingnode: "同層主题",
+                appendchildnode: "下層主题",
+                arrangeup: "上移",
+                arrangedown: "下移",
+                editnode: "編輯",
+                removenode: "移除",
+                priority: "優先順序",
+                progress: {
+                    p1: "未開始",
+                    p2: "完成 1/8",
+                    p3: "完成 1/4",
+                    p4: "完成 3/8",
+                    p5: "完成一半",
+                    p6: "完成 5/8",
+                    p7: "完成 3/4",
+                    p8: "完成 7/8",
+                    p9: "已完成",
+                    p0: "清除進度"
                 },
-                'resource': {
-                    'add': '新增'
+                resource: {
+                    add: "新增"
                 },
-                'link': '連結',
-                'image': '圖片',
-                'note': '備註',
-                'insertlink': '插入連結',
-                'insertimage': '插入圖片',
-                'insertnote': '插入備註',
-                'removelink': '移除連結',
-                'removeimage': '移除圖片',
-                'removenote': '移除備註',
-                'resetlayout': '重新配置',
-                'navigator': '導覽器',
-                'selectall': '全選',
-                'selectrevert': '取消全選',
-                'selectsiblings': '選取下層節點',
-                'selectlevel': '選取同層節點',
-                'selectpath': '選取路徑',
-                'selecttree': '選取樹系',
-                'noteeditor': {
-                    'title': '標題',
-                    'hint': '支援 GFM 語法撰寫',
-                    'placeholder': '請選取節點以編輯備註文字'
+                link: "連結",
+                image: "圖片",
+                note: "備註",
+                insertlink: "插入連結",
+                insertimage: "插入圖片",
+                insertnote: "插入備註",
+                removelink: "移除連結",
+                removeimage: "移除圖片",
+                removenote: "移除備註",
+                resetlayout: "重新配置",
+                navigator: "導覽器",
+                selectall: "全選",
+                selectrevert: "取消全選",
+                selectsiblings: "選取下層節點",
+                selectlevel: "選取同層節點",
+                selectpath: "選取路徑",
+                selecttree: "選取樹系",
+                noteeditor: {
+                    title: "標題",
+                    hint: "支援 GFM 語法撰寫",
+                    placeholder: "請選取節點以編輯備註文字"
                 },
-                'dialog': {
-                    'image': {
-                        'title': '圖片',
-                        'imagesearch': '圖片搜尋',
-                        'keyword': '關鍵字',
-                        'placeholder': '請輸入要搜尋的關鍵字',
-                        'baidu': '百度',
-                        'linkimage': '連結圖片',
-                        'linkurl': '連結位址',
-                        'placeholder2': '必填：以 http(s):// 開頭',
-                        'imagehint': '提示訊息',
-                        'placeholder3': '選填：當游標在圖片上懸停時顯示的訊息',
-                        'preview': '圖片預覽',
-                        'uploadimage': '上傳圖片',
-                        'selectfile': '選擇檔案...',
-                        'ok': '確定',
-                        'cancel': '取消',
-                        'formatinfo': '附檔名只接受 jpg、gif 及 png'
+                dialog: {
+                    image: {
+                        title: "圖片",
+                        imagesearch: "圖片搜尋",
+                        keyword: "關鍵字",
+                        placeholder: "請輸入要搜尋的關鍵字",
+                        baidu: "百度",
+                        linkimage: "連結圖片",
+                        linkurl: "連結位址",
+                        placeholder2: "必填：以 http(s):// 開頭",
+                        imagehint: "提示訊息",
+                        placeholder3: "選填：當游標在圖片上懸停時顯示的訊息",
+                        preview: "圖片預覽",
+                        uploadimage: "上傳圖片",
+                        selectfile: "選擇檔案...",
+                        ok: "確定",
+                        cancel: "取消",
+                        formatinfo: "附檔名只接受 jpg、gif 及 png"
                     },
-                    'hyperlink': {
-                        'title': '連結',
-                        'linkurl': '連結位址',
-                        'linkhint': '提示訊息',
-                        'placeholder': '必填：以 http(s):// 或 ftp(s):// 開頭',
-                        'placeholder2': '選填：當游標在連結上懸停時顯示的訊息',
-                        'ok': '確定',
-                        'cancel': '取消'
-    
+                    hyperlink: {
+                        title: "連結",
+                        linkurl: "連結位址",
+                        linkhint: "提示訊息",
+                        placeholder: "必填：以 http(s):// 或 ftp(s):// 開頭",
+                        placeholder2: "選填：當游標在連結上懸停時顯示的訊息",
+                        ok: "確定",
+                        cancel: "取消"
                     },
-                    'exportnode': {
-                        'title': '匯出節點',
-                        'ok': '確定',
-                        'cancel': '取消'
+                    exportnode: {
+                        title: "匯出節點",
+                        ok: "確定",
+                        cancel: "取消"
                     }
                 }
             },
-            'runtime': {
-                'minder': {
-                    'maintopic': '中心主題'
+            runtime: {
+                minder: {
+                    maintopic: "中心主題"
                 },
-                'node': {
-                    'arrangeup': '上移',
-                    'appendchildnode': '下層',
-                    'appendsiblingnode': '同層',
-                    'arrangedown': '下移',
-                    'removenode': '刪除',
-                    'appendparentnode': '上層',
-                    'selectall': '全選',
-                    'topic': '分支主題',
-                    'importnode': '匯入節點',
-                    'exportnode': '匯出節點'
+                node: {
+                    arrangeup: "上移",
+                    appendchildnode: "下層",
+                    appendsiblingnode: "同層",
+                    arrangedown: "下移",
+                    removenode: "刪除",
+                    appendparentnode: "上層",
+                    selectall: "全選",
+                    topic: "分支主題",
+                    importnode: "匯入節點",
+                    exportnode: "匯出節點"
                 },
-                'input': {
-                    'edit': '編輯'
+                input: {
+                    edit: "編輯"
                 },
-                'priority': {
-                    'main': '優先權',
-                    'remove': '移除',
-                    'esc': '返回'
+                priority: {
+                    main: "優先權",
+                    remove: "移除",
+                    esc: "返回"
                 },
-                'progress': {
-                    'main': '進度',
-                    'remove': '移除',
-                    'esc': '返回'
+                progress: {
+                    main: "進度",
+                    remove: "移除",
+                    esc: "返回"
                 },
-                'history': {
-                    'undo': '復原',
-                    'redo': '取消復原'
+                history: {
+                    undo: "復原",
+                    redo: "取消復原"
                 }
             }
         };
     }
 };
-
 
 var moduleMapping = {
     "expose-editor": 1

@@ -2,8 +2,10 @@ define(function(require, exports, module) {
     var langList = {
         'en': require('../l10n/en'),
         'de': require('../l10n/de'),
-        'fr': require ('../l10n/fr'),
-        'zh_CN': require('../l10n/zh_CN')
+        'es': require('../l10n/es'),
+        'fr': require('../l10n/fr'),
+        'it': require('../l10n/it'),
+        'zh_CN': require('../l10n/zh_CN'),
         'zh_TW': require('../l10n/zh_TW')
     };
     var defaultLang = 'en';
