@@ -18,17 +18,17 @@ define(function(require, exports, module) {
             'fresh-red': 'Свежая красная',
             'fresh-soil': 'Грязно-желтый',
             'fresh-green': 'Художественный зеленый',
-            'fresh-blue': 'Sky Blue',
-            'fresh-purple': 'Romantic Purple',
-            'fresh-pink': 'Mind powder',
-            'fresh-red-compat': 'Compact red',
-            'fresh-soil-compat': 'Compact yellow',
-            'fresh-green-compat': 'Compact green',
-            'fresh-blue-compat': 'Compact blue',
-            'fresh-purple-compat': 'Compact purple',
-            'fresh-pink-compat': 'Compact powder',
-            'tianpan': 'Classic dial',
-            'tianpan-compact': 'Compact day'
+            'fresh-blue': 'Лазурный',
+            'fresh-purple': 'Романтический фиолетовый',
+            'fresh-pink': 'Порошок разума',
+            'fresh-red-compat': 'Компактный красный',
+            'fresh-soil-compat': 'Компактный желтый',
+            'fresh-green-compat': 'Компактный зеленый',
+            'fresh-blue-compat': 'Компактный синий',
+            'fresh-purple-compat': 'Компактный фиолетовый',
+            'fresh-pink-compat': 'Компактный порошок',
+            'tianpan': 'Классический циферблат',
+            'tianpan-compact': 'Компактный день'
         },
         'maintopic': 'Center theme',
         'topic': 'branch topic',
@@ -166,19 +166,19 @@ define(function(require, exports, module) {
                     'formatinfo': 'file ext must be jpg、gif or png'
                 },
                 'hyperlink': {
-                    'title': 'Link',
+                    'title': 'Ссылка',
                     'linkurl': 'Link url：',
-                    'linkhint': 'Hint：',
-                    'placeholder': 'Require：start with http(s):// or ftp://',
-                    'placeholder2': 'Optional: The text that the mouse prompts when hovering over the link',
+                    'linkhint': 'Совет：',
+                    'placeholder': 'Обязательно：начать с http (s): // или ftp: //',
+                    'placeholder2': 'Необязательно: текст-подсказка при наведении на ссылку',
                     'ok': 'OK',
-                    'cancel': 'Cancel'
+                    'cancel': 'Закрыть'
 
                 },
                 'exportnode': {
-                    'title': 'Export Node',
+                    'title': 'Экспорт Узла',
                     'ok': 'OK',
-                    'cancel': 'Cancel'
+                    'cancel': 'Закрыть'
                 }
             }
         },
@@ -187,33 +187,33 @@ define(function(require, exports, module) {
                 'maintopic': 'Main Topic'
             },
             'node': {
-                'arrangeup': 'Arrange Up',
-                'appendchildnode': 'Append Child Node',
-                'appendsiblingnode': 'Append Sibling Node',
-                'arrangedown': 'Arrange Down',
-                'removenode': 'Delete',
-                'appendparentnode': 'Append Parent Node',
-                'selectall': 'Select All',
-                'topic': 'Topic',
-                'importnode': 'Import Node',
-                'exportnode': 'Export Node'
+                'arrangeup': 'Расположить вверх',
+                'appendchildnode': 'Добавить дочерний узел',
+                'appendsiblingnode': 'Добавить узел брата',
+                'arrangedown': 'Расположить вниз',
+                'removenode': 'Удалить',
+                'appendparentnode': 'Добавить родительский узел',
+                'selectall': 'Выбрать Все',
+                'topic': 'Заголовок',
+                'importnode': 'Импорт узла',
+                'exportnode': 'Экспорт узла'
             },
             'input': {
-                'edit': 'Edit'
+                'edit': 'Редактировать'
             },
             'priority': {
-                'main': 'Priority',
-                'remove': 'Delete',
+                'main': 'Приоритет',
+                'remove': 'Удалить',
                 'esc': 'Esc'
             },
             'progress': {
-                'main': 'Progress',
-                'remove': 'Delete',
+                'main': 'Прогресс',
+                'remove': 'Удалить',
                 'esc': 'Esc'
             },
             'history': {
-                'undo': 'Undo',
-                'redo': 'Redo'
+                'undo': 'Назад',
+                'redo': 'Вперед'
             }
         }
     };
